@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user1\\Downloads\\Employee Management Project\\Employee Management\\Employee Management\\Employee Management.csproj",
+      "projectUniqueName": "C:\\Users\\user1\\Downloads\\Payroll_Management\\Employee Management\\Employee Management.csproj",
       "projectName": "Employee Management",
-      "projectPath": "C:\\Users\\user1\\Downloads\\Employee Management Project\\Employee Management\\Employee Management\\Employee Management.csproj",
+      "projectPath": "C:\\Users\\user1\\Downloads\\Payroll_Management\\Employee Management\\Employee Management.csproj",
       "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user1\\Downloads\\Employee Management Project\\Employee Management\\Employee Management\\obj\\",
+      "outputPath": "C:\\Users\\user1\\Downloads\\Payroll_Management\\Employee Management\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",

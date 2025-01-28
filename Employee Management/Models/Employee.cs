@@ -13,7 +13,6 @@ namespace Employee_Management.Models
         public string LocalAddress { get; set; }
         public string PermanentAddress { get; set; }
         public string Nationality { get; set; }
-        public string MaritalStatus { get; set; }
         public string Photo { get; set; }
         public string Email { get; set; }
         public Department DepartmentId { get; set; } 

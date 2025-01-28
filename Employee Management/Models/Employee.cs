@@ -22,5 +22,4 @@ namespace Employee_Management.Models
         public BankDetail BankDetail { get; set; }
         public Login Login { get; set; }
     }
-
 }

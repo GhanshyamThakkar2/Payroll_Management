@@ -1,0 +1,8 @@
+C:\Users\user1\Downloads\Employee Management Project\Employee Management\Employee Management\obj\Debug\netcoreapp3.1\Employee Management.csproj.AssemblyReference.cache
+C:\Users\user1\Downloads\Employee Management Project\Employee Management\Employee Management\obj\Debug\netcoreapp3.1\Employee Management.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Downloads\Employee Management Project\Employee Management\Employee Management\obj\Debug\netcoreapp3.1\Employee Management.AssemblyInfoInputs.cache
+C:\Users\user1\Downloads\Employee Management Project\Employee Management\Employee Management\obj\Debug\netcoreapp3.1\Employee Management.AssemblyInfo.cs
+C:\Users\user1\Downloads\Employee Management Project\Employee Management\Employee Management\obj\Debug\netcoreapp3.1\Employee Management.csproj.CoreCompileInputs.cache
+C:\Users\user1\Downloads\Employee Management Project\Employee Management\Employee Management\obj\Debug\netcoreapp3.1\Employee Management.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user1\Downloads\Employee Management Project\Employee Management\Employee Management\obj\Debug\netcoreapp3.1\Employee Management.RazorAssemblyInfo.cache
+C:\Users\user1\Downloads\Employee Management Project\Employee Management\Employee Management\obj\Debug\netcoreapp3.1\Employee Management.RazorAssemblyInfo.cs

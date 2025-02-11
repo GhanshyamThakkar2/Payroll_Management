@@ -3,10 +3,11 @@
     public class Payslip
     {
         public int PayslipId { get; set; }
-        public int DepartmentId { get; set; }
         public int EmployeeId { get; set; }
+        public Employee Employee { get; set; }
         public int Year { get; set; }
         public string Month { get; set; }
+        public DateTime PayslipDate { get; set; }
         public decimal BasicSalary { get; set; }
         public decimal TotalAllowances { get; set; }
         public decimal TotalDeductions { get; set; }

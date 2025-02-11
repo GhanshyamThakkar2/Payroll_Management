@@ -6,6 +6,7 @@ namespace Employee_Management.Models
     {
         public int DepartmentId { get; set; }
         public string DepartmentName { get; set; }
+        //Navigation Property
         public ICollection<Employee> Employees { get; set; }
         public string Designation { get; set; }
     }

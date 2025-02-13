@@ -8,7 +8,8 @@
         public string IFSCCode { get; set; }
         public string BankName { get; set; }
         public string Branch { get; set; }
-        //One-to-One with Employee
+        // One-to-One Relationship with Employee
+        public int EmployeeId { get; set; }  // Foreign Key
         public Employee Employee { get; set;}
     }
 }

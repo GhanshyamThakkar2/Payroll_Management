@@ -24,12 +24,7 @@ namespace Employee_Management
         Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder =>
             {
-                webBuilder.ConfigureServices((context, services) =>
-                {
-                    services.AddDbContext<EmployeeDBContext>(options =>
-                        options.UseSqlServer(context.Configuration.GetConnectionString("mycon")));
-                })
-                .UseStartup<Startup>();
+                webBuilder.UseStartup<Startup>();
             });
     }
 }

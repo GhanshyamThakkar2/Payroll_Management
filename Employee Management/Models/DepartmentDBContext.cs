@@ -40,7 +40,7 @@ namespace Employee_Management.Models
                       .HasMaxLength(15);
 
                 // Configure one-to-many relationship between Department and Employee
-                entity.HasOne(e => e.DepartmentId)
+                entity.HasOne(e => e.Department)
                       .WithMany(d => d.Employees)
                       .HasForeignKey("DepartmentId") // Define the foreign key in Employee
                       .OnDelete(DeleteBehavior.Cascade); // Cascade delete employees when a department is deleted

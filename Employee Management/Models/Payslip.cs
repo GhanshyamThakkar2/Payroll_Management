@@ -1,4 +1,6 @@
-﻿namespace Employee_Management.Models
+﻿using System;
+
+namespace Employee_Management.Models
 {
     public class Payslip
     {

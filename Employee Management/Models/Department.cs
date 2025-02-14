@@ -10,5 +10,4 @@ namespace Employee_Management.Models
         public ICollection<Employee> Employees { get; set; }
         public string Designation { get; set; }
     }
-
 }

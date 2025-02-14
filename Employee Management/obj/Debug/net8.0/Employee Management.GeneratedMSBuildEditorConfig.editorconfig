@@ -26,12 +26,92 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = A:\Payrol\Payroll_Management\Employee Management
 build_property._RazorSourceGeneratorDebug = 
 
+[A:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Departments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Departments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Departments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Departments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Departments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Employees/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Employees/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Employees/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Employees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Employees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [A:/Payrol/Payroll_Management/Employee Management/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [A:/Payrol/Payroll_Management/Employee Management/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [A:/Payrol/Payroll_Management/Employee Management/Views/Shared/Error.cshtml]

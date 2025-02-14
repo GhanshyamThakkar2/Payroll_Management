@@ -23,7 +23,7 @@ namespace Employee_Management.Models
         public decimal Allowance { get; set; }
         public decimal Deduction { get; set; }
         public int BankDetailId { get; set; }
-        //Navif=gation Property One-To-One
+        //Navigation Property One-To-One
         public BankDetail BankDetail { get; set; }
         public int PayslipId { get; set; }
         //One to many

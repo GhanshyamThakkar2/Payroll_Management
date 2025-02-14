@@ -1,14 +1,17 @@
 ﻿using Employee_Management.Models;
 using System.Collections.Generic;
 using System;
+using Employee_Management.Interface;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Employee_Management.Repository
 {
-    public class BankDetailRepository
+    public class BankDetailRepository : IBankDetail
     {
-        private readonly BankDetailRepository _context;
+        private readonly AppDBContext _context;
 
-        public BankDetailRepository(AppDbContext context)
+        public BankDetailRepository(AppDBContext context)
         {
             _context = context;
         }
@@ -16,13 +19,13 @@ namespace Employee_Management.Repository
         // Retrieve all bank details
         public IEnumerable<BankDetail> GetAllBankDetails()
         {
-            return _context.BankDetails.ToList();
+            return _context.BankDetails.Include(b => b.Employee).ToList();
         }
 
-        // Retrieve a single bank detail by ID
-        public BankDetail GetBankDetailById(int bankDetailId)
+        public BankDetail GetBankDetailById(int id)
         {
-            return _context.BankDetails.FirstOrDefault(b => b.BankDetailId == bankDetailId);
+            return _context.BankDetails.Include(b => b.Employee)
+                                       .FirstOrDefault(b => b.BankDetailId == id);
         }
 
         // Add a new bank detail
@@ -32,7 +35,6 @@ namespace Employee_Management.Repository
             _context.SaveChanges();
         }
 
-        // Update an existing bank detail
         public void UpdateBankDetail(BankDetail bankDetail)
         {
             _context.BankDetails.Update(bankDetail);
@@ -40,9 +42,9 @@ namespace Employee_Management.Repository
         }
 
         // Delete a bank detail by ID
-        public void DeleteBankDetail(int bankDetailId)
+        public void DeleteBankDetail(int id)
         {
-            var bankDetail = _context.BankDetails.Find(bankDetailId);
+            var bankDetail = _context.BankDetails.Find(id);
             if (bankDetail != null)
             {
                 _context.BankDetails.Remove(bankDetail);
@@ -50,18 +52,16 @@ namespace Employee_Management.Repository
             }
         }
 
-        // Retrieve a bank detail by employee ID (if linked to an employee)
         public BankDetail GetBankDetailByEmployeeId(int employeeId)
         {
-            return _context.Employees
-                .Include(e => e.BankDetail) // Include related bank detail
-                .FirstOrDefault(e => e.EmployeeId == employeeId)?.BankDetail;
+            return _context.BankDetails.Include(b => b.Employee)
+                                       .FirstOrDefault(b => b.Employee.EmployeeId == employeeId);
         }
 
         // Check if a bank detail exists by ID
-        public bool BankDetailExists(int bankDetailId)
+        public bool BankDetailExists(int id)
         {
-            return _context.BankDetails.Any(b => b.BankDetailId == bankDetailId);
+            return _context.BankDetails.Any(b => b.BankDetailId == id);
         }
     }
 }

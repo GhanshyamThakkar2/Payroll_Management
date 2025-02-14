@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Employee_Management.Interface
 {
-    public interface IBankDetailRepository
+    public interface IBankDetail
     {
         IEnumerable<BankDetail> GetAllBankDetails();
         BankDetail GetBankDetailById(int id);

@@ -7,11 +7,11 @@ using System.Linq;
 
 namespace Employee_Management.Repository
 {
-    public class EmployeeRepository : IEmployeeRepository
+    public class EmployeeRepository : IEmployee
     {
-        private readonly EmployeeDBContext _context;
+        private readonly AppDBContext _context;
 
-        public EmployeeRepository(EmployeeDBContext context)
+        public EmployeeRepository(AppDBContext context)
         {
             _context = context;
         }
@@ -19,21 +19,14 @@ namespace Employee_Management.Repository
         // Retrieve all employees
         public IEnumerable<Employee> GetAllEmployees()
         {
-            return _context.Employees
-                .Include(e => e.DepartmentId) // Include related department data
-                .Include(e => e.BankDetail)  // Include related bank details
-                .Include(e => e.Login)      // Include related login details
-                .ToList();
+            return _context.Employees.Include(e => e.Department).ToList();
         }
 
         // Retrieve a single employee by ID
         public Employee GetEmployeeById(int id)
         {
-            return _context.Employees
-                .Include(e => e.DepartmentId) // Include related department data
-                .Include(e => e.BankDetail)  // Include related bank details
-                .Include(e => e.Login)      // Include related login details
-                .FirstOrDefault(e => e.EmployeeId == id);
+            return _context.Employees.Include(e => e.Department)
+                                     .FirstOrDefault(e => e.EmployeeId == id);
         }
 
         // Add a new employee
@@ -64,10 +57,7 @@ namespace Employee_Management.Repository
         // Retrieve employees by department
         public IEnumerable<Employee> GetEmployeesByDepartment(int departmentId)
         {
-            return _context.Employees
-                .Where(e => e.DepartmentId.DepartmentId == departmentId)
-                .Include(e => e.DepartmentId) // Include related department data
-                .ToList();
+            return _context.Employees.Where(e => e.DepartmentId == departmentId).ToList();
         }
 
         // Check if an employee exists by ID

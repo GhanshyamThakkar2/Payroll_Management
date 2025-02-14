@@ -1,7 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "A:\\Payrol\\Employee Management Project\\Employee Management\\",
-  "Documents": [],
+  "WorkspaceRootPath": "A:\\Payrol\\Payroll_Management\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\interface\\iemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\interface\\iemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +26,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Repository\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Employee Management\\Repository\\EmployeeRepository.cs",
+              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Repository\\EmployeeRepository.cs",
+              "RelativeToolTip": "Employee Management\\Repository\\EmployeeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T17:49:13.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "Employee Management\\Models\\Employee.cs",
+              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Employee.cs",
+              "RelativeToolTip": "Employee Management\\Models\\Employee.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T14:09:25.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "Employee Management\\Models\\AppDBContext.cs",
+              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\AppDBContext.cs",
+              "RelativeToolTip": "Employee Management\\Models\\AppDBContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA7wCQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T17:35:44.827Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -26,6 +82,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IEmployee.cs",
+              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Interface\\IEmployee.cs",
+              "RelativeDocumentMoniker": "Employee Management\\Interface\\IEmployee.cs",
+              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Interface\\IEmployee.cs",
+              "RelativeToolTip": "Employee Management\\Interface\\IEmployee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T16:20:56.281Z",
+              "EditorCaption": ""
             }
           ]
         },

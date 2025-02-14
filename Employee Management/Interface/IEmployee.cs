@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Employee_Management.Interface
 {
-    public interface IEmployeeRepository
+    public interface IEmployee
     {
         IEnumerable<Employee> GetAllEmployees();
         Employee GetEmployeeById(int id);

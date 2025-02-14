@@ -229,7 +229,6 @@ A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\Microsoft.Visu
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\Mono.TextTemplating.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\Newtonsoft.Json.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\NuGet.Common.dll
@@ -250,7 +249,6 @@ A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Composi
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Composition.TypedParts.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
-A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Drawing.Common.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Formats.Asn1.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.IO.Pipelines.dll
@@ -258,10 +256,8 @@ A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Memory.
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Runtime.Caching.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Security.Permissions.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Text.Json.dll
-A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\System.Windows.Extensions.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\af\Humanizer.resources.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\ar\Humanizer.resources.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\az\Humanizer.resources.dll
@@ -420,12 +416,8 @@ A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\win-a
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
-A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
-A:\Payrol\Payroll_Management\Employee Management\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 A:\Payrol\Payroll_Management\Employee Management\obj\Debug\net8.0\Employee Management.csproj.AssemblyReference.cache
 A:\Payrol\Payroll_Management\Employee Management\obj\Debug\net8.0\Employee Management.GeneratedMSBuildEditorConfig.editorconfig
 A:\Payrol\Payroll_Management\Employee Management\obj\Debug\net8.0\Employee Management.AssemblyInfoInputs.cache

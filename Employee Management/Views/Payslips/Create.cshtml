@@ -9,67 +9,108 @@
 <h4>Payslip</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label"></label>
-                <select asp-for="EmployeeId" class ="form-control" asp-items="ViewBag.EmployeeId"></select>
+    <div class="col-md-12"> @* Full width card *@
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Create Payslip</h5> @* Card title *@
+
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row mb-3">
+                        <label asp-for="EmployeeId" class="col-sm-2 col-form-label">Employee</label>
+                        <div class="col-sm-10">
+                            <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="Year" class="col-sm-2 col-form-label">Year</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Year" class="form-control" />
+                            <span asp-validation-for="Year" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="Month" class="col-sm-2 col-form-label">Month</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Month" class="form-control" />
+                            <span asp-validation-for="Month" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="PayslipDate" class="col-sm-2 col-form-label">Payslip Date</label>
+                        <div class="col-sm-10">
+                            <input asp-for="PayslipDate" class="form-control" type="date" /> @* Type date added *@
+                            <span asp-validation-for="PayslipDate" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="BasicSalary" class="col-sm-2 col-form-label">Basic Salary</label>
+                        <div class="col-sm-10">
+                            <input asp-for="BasicSalary" class="form-control" />
+                            <span asp-validation-for="BasicSalary" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="TotalAllowances" class="col-sm-2 col-form-label">Total Allowances</label>
+                        <div class="col-sm-10">
+                            <input asp-for="TotalAllowances" class="form-control" />
+                            <span asp-validation-for="TotalAllowances" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="TotalDeductions" class="col-sm-2 col-form-label">Total Deductions</label>
+                        <div class="col-sm-10">
+                            <input asp-for="TotalDeductions" class="form-control" />
+                            <span asp-validation-for="TotalDeductions" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="NetSalary" class="col-sm-2 col-form-label">Net Salary</label>
+                        <div class="col-sm-10">
+                            <input asp-for="NetSalary" class="form-control" />
+                            <span asp-validation-for="NetSalary" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="PaymentMethod" class="col-sm-2 col-form-label">Payment Method</label>
+                        <div class="col-sm-10">
+                            <input asp-for="PaymentMethod" class="form-control" />
+                            <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="Status" class="col-sm-2 col-form-label">Status</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Status" class="form-control" />
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="Comments" class="col-sm-2 col-form-label">Comments</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Comments" class="form-control" />
+                            <span asp-validation-for="Comments" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" value="Create" class="btn btn-primary">Create</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button> @* Reset Button added *@
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Year" class="control-label"></label>
-                <input asp-for="Year" class="form-control" />
-                <span asp-validation-for="Year" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Month" class="control-label"></label>
-                <input asp-for="Month" class="form-control" />
-                <span asp-validation-for="Month" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PayslipDate" class="control-label"></label>
-                <input asp-for="PayslipDate" class="form-control" />
-                <span asp-validation-for="PayslipDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BasicSalary" class="control-label"></label>
-                <input asp-for="BasicSalary" class="form-control" />
-                <span asp-validation-for="BasicSalary" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TotalAllowances" class="control-label"></label>
-                <input asp-for="TotalAllowances" class="form-control" />
-                <span asp-validation-for="TotalAllowances" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TotalDeductions" class="control-label"></label>
-                <input asp-for="TotalDeductions" class="form-control" />
-                <span asp-validation-for="TotalDeductions" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NetSalary" class="control-label"></label>
-                <input asp-for="NetSalary" class="form-control" />
-                <span asp-validation-for="NetSalary" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PaymentMethod" class="control-label"></label>
-                <input asp-for="PaymentMethod" class="form-control" />
-                <span asp-validation-for="PaymentMethod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Comments" class="control-label"></label>
-                <input asp-for="Comments" class="form-control" />
-                <span asp-validation-for="Comments" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -80,3 +121,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

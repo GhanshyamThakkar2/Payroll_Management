@@ -9,44 +9,70 @@
 <h4>BankDetail</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="BankDetailId" />
-            <div class="form-group">
-                <label asp-for="AccountHolderName" class="control-label"></label>
-                <input asp-for="AccountHolderName" class="form-control" />
-                <span asp-validation-for="AccountHolderName" class="text-danger"></span>
+    <div class="col-md-12">  @* Changed to col-md-12 for full width *@
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Edit Bank Details</h5> @* Card title added *@
+
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="BankDetailId" />
+
+                    <div class="row mb-3"> @* Added row and mb-3 for spacing *@
+                        <label asp-for="AccountHolderName" class="col-sm-2 col-form-label">Account Holder Name</label> @* Label styled *@
+                        <div class="col-sm-10"> @* Input container *@
+                            <input asp-for="AccountHolderName" class="form-control" />
+                            <span asp-validation-for="AccountHolderName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="AccountNumber" class="col-sm-2 col-form-label">Account Number</label>
+                        <div class="col-sm-10">
+                            <input asp-for="AccountNumber" class="form-control" />
+                            <span asp-validation-for="AccountNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="IFSCCode" class="col-sm-2 col-form-label">IFSC Code</label>
+                        <div class="col-sm-10">
+                            <input asp-for="IFSCCode" class="form-control" />
+                            <span asp-validation-for="IFSCCode" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="BankName" class="col-sm-2 col-form-label">Bank Name</label>
+                        <div class="col-sm-10">
+                            <input asp-for="BankName" class="form-control" />
+                            <span asp-validation-for="BankName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="Branch" class="col-sm-2 col-form-label">Branch</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Branch" class="form-control" />
+                            <span asp-validation-for="Branch" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="EmployeeId" class="col-sm-2 col-form-label">Employee ID</label>
+                        <div class="col-sm-10">
+                            <input asp-for="EmployeeId" class="form-control" />
+                            <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="text-center"> @* Centered buttons *@
+                        <button type="submit" value="Save" class="btn btn-primary">Save</button> @* Button styled *@
+                        <button type="reset" class="btn btn-secondary">Reset</button> @* Reset button added and styled *@
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="AccountNumber" class="control-label"></label>
-                <input asp-for="AccountNumber" class="form-control" />
-                <span asp-validation-for="AccountNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IFSCCode" class="control-label"></label>
-                <input asp-for="IFSCCode" class="form-control" />
-                <span asp-validation-for="IFSCCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BankName" class="control-label"></label>
-                <input asp-for="BankName" class="form-control" />
-                <span asp-validation-for="BankName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Branch" class="control-label"></label>
-                <input asp-for="Branch" class="form-control" />
-                <span asp-validation-for="Branch" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label"></label>
-                <input asp-for="EmployeeId" class="form-control" />
-                <span asp-validation-for="EmployeeId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -57,3 +83,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

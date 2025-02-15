@@ -7,9 +7,10 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a> @* Styled Create button *@
 </p>
-<table class="table">
+
+<table class="table datatable"> @* Added datatable class *@
     <thead>
         <tr>
             <th>
@@ -22,20 +23,33 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Designation)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DepartmentId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DepartmentId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DepartmentId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DepartmentId" class="btn btn-sm btn-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DepartmentId" class="btn btn-sm btn-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DepartmentId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<script>
+    $(document).ready(function () {
+        $('.datatable').DataTable({ // Initialize DataTables
+            paging: true,
+            searching: true,
+            ordering: true,
+            info: true,
+            pageLength: 10
+        });
+    });
+</script>

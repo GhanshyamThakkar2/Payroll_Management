@@ -9,23 +9,37 @@
 <h4>Department</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="DepartmentName" class="control-label"></label>
-                <input asp-for="DepartmentName" class="form-control" />
-                <span asp-validation-for="DepartmentName" class="text-danger"></span>
+    <div class="col-md-12"> @* Full width card *@
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Create Department</h5> @* Card title *@
+
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row mb-3">
+                        <label asp-for="DepartmentName" class="col-sm-2 col-form-label">Department Name</label>
+                        <div class="col-sm-10">
+                            <input asp-for="DepartmentName" class="form-control" />
+                            <span asp-validation-for="DepartmentName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="Designation" class="col-sm-2 col-form-label">Designation</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Designation" class="form-control" />
+                            <span asp-validation-for="Designation" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" value="Create" class="btn btn-primary">Create</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button> @* Reset Button added *@
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Designation" class="control-label"></label>
-                <input asp-for="Designation" class="form-control" />
-                <span asp-validation-for="Designation" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -36,3 +50,55 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+@* <style>
+    /* Basic styling for the form */
+    .card {
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .card-title {
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .row.mb-3 {
+        margin-bottom: 1.5rem;
+    }
+
+    .col-form-label {
+        font-weight: 500;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-secondary{
+        background-color: #6c757d;
+        border-color: #6c757d;
+        margin-left:10px;
+    }
+
+    /* Responsive adjustments (example) */
+    @media (max-width: 768px) {
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .col-sm-2 {
+            width: 100%;
+        }
+
+        .col-sm-10 {
+            width: 100%;
+        }
+    }
+</style> *@

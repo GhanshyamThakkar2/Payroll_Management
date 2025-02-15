@@ -9,43 +9,69 @@
 <h4>BankDetail</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="AccountHolderName" class="control-label"></label>
-                <input asp-for="AccountHolderName" class="form-control" />
-                <span asp-validation-for="AccountHolderName" class="text-danger"></span>
+    <div class="col-md-12"> @* Full width card *@
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Create Bank Details</h5> @* Card title *@
+
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row mb-3">
+                        <label asp-for="AccountHolderName" class="col-sm-2 col-form-label">Account Holder Name</label>
+                        <div class="col-sm-10">
+                            <input asp-for="AccountHolderName" class="form-control" />
+                            <span asp-validation-for="AccountHolderName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="AccountNumber" class="col-sm-2 col-form-label">Account Number</label>
+                        <div class="col-sm-10">
+                            <input asp-for="AccountNumber" class="form-control" />
+                            <span asp-validation-for="AccountNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="IFSCCode" class="col-sm-2 col-form-label">IFSC Code</label>
+                        <div class="col-sm-10">
+                            <input asp-for="IFSCCode" class="form-control" />
+                            <span asp-validation-for="IFSCCode" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="BankName" class="col-sm-2 col-form-label">Bank Name</label>
+                        <div class="col-sm-10">
+                            <input asp-for="BankName" class="form-control" />
+                            <span asp-validation-for="BankName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="Branch" class="col-sm-2 col-form-label">Branch</label>
+                        <div class="col-sm-10">
+                            <input asp-for="Branch" class="form-control" />
+                            <span asp-validation-for="Branch" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="EmployeeId" class="col-sm-2 col-form-label">Employee ID</label>
+                        <div class="col-sm-10">
+                            <input asp-for="EmployeeId" class="form-control" />
+                            <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" value="Create" class="btn btn-primary">Create</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button> @* Reset Button added *@
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="AccountNumber" class="control-label"></label>
-                <input asp-for="AccountNumber" class="form-control" />
-                <span asp-validation-for="AccountNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IFSCCode" class="control-label"></label>
-                <input asp-for="IFSCCode" class="form-control" />
-                <span asp-validation-for="IFSCCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BankName" class="control-label"></label>
-                <input asp-for="BankName" class="form-control" />
-                <span asp-validation-for="BankName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Branch" class="control-label"></label>
-                <input asp-for="Branch" class="form-control" />
-                <span asp-validation-for="Branch" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label"></label>
-                <input asp-for="EmployeeId" class="form-control" />
-                <span asp-validation-for="EmployeeId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 

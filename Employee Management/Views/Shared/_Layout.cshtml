@@ -25,14 +25,33 @@
 
     <link href="~/template/css/style.css" rel="stylesheet">
 
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1; /* Key for pushing footer to bottom */
+        }
+
+        footer {
+            /* Your footer styles here */
+            background-color: #f8f9fa; /* Example background color */
+            padding: 20px; /* Example padding */
+            text-align: center; /* Example text alignment */
+        }
+    </style>
+
 </head>
 
 <body>
 
     <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="d-flex align-items-center justify-content-between">
-            
-            @* &nbsp;&nbsp;&nbsp;&nbsp; *@
             <a href="index.html" class="logo d-flex align-items-center">
                 <img src="~/template/img/logo.png" alt="">
                 <span class="d-none d-lg-block">Payrol Management</span>
@@ -44,20 +63,21 @@
             <ul class="d-flex align-items-center">
                 <li class="nav-item dropdown pe-3">
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="~/template/img/profile-img.jpg" alt="Profile" class="rounded-circle">  @* YOUR IMAGE CODE HERE *@
-                        <span class="d-none d-md-block dropdown-toggle ps-2">Jobanputra Ghanshyam</span> @* YOUR NAME CODE HERE *@
+                        <img src="~/template/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Jobanputra Ghanshyam</span>
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6> @* YOUR NAME CODE HERE *@
-                            <span>Web Designer</span> @* YOUR ROLE CODE HERE *@
+                            <h6>Kevin Anderson</h6>
+                            <span>Web Designer</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" asp-area="" asp-controller="Manage" asp-action="Profile">
+                            <a class="dropdown-item d-flex align-items-center" asp-area="" asp-controller="Manage"
+                               asp-action="Profile">
                                 <i class="bi bi-person"></i>
                                 <span>My Profile</span>
                             </a>
@@ -66,7 +86,8 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" asp-area="" asp-controller="Account" asp-action="Logout">
+                            <a class="dropdown-item d-flex align-items-center" asp-area="" asp-controller="Account"
+                               asp-action="Logout">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
@@ -103,7 +124,6 @@
                     <span>Manage Payslips</span>
                 </a>
             </li>
-            @* ... other navigation items ... *@
         </ul>
     </aside>
 

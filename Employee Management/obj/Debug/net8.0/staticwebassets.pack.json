@@ -717,6 +717,10 @@
       "PackagePath": "staticwebassets\\template\\css\\style.css"
     },
     {
+      "Id": "A:\\Payrol\\Payroll_Management\\Employee Management\\wwwroot\\template\\img\\My Photo.jpeg",
+      "PackagePath": "staticwebassets\\template\\img\\My Photo.jpeg"
+    },
+    {
       "Id": "A:\\Payrol\\Payroll_Management\\Employee Management\\wwwroot\\template\\img\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\template\\img\\apple-touch-icon.png"
     },

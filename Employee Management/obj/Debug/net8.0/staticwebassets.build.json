@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WHsfKijCw75sXCRzCYt5F726xapX9orAEs2AIy0ekB8=",
+  "Hash": "CKUAPGQLLER91YTTbA/69H6Q8uR4Oi35dGdfKevyBDI=",
   "Source": "Employee Management",
   "BasePath": "_content/Employee Management",
   "Mode": "Default",
@@ -3549,6 +3549,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\template\\img\\messages-3.jpg"
+    },
+    {
+      "Identity": "A:\\Payrol\\Payroll_Management\\Employee Management\\wwwroot\\template\\img\\My Photo.jpeg",
+      "SourceId": "Employee Management",
+      "SourceType": "Discovered",
+      "ContentRoot": "A:\\Payrol\\Payroll_Management\\Employee Management\\wwwroot\\",
+      "BasePath": "_content/Employee Management",
+      "RelativePath": "template/img/My Photo.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\template\\img\\My Photo.jpeg"
     },
     {
       "Identity": "A:\\Payrol\\Payroll_Management\\Employee Management\\wwwroot\\template\\img\\news-1.jpg",

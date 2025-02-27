@@ -5,11 +5,10 @@
 }
 
 <h1>Create</h1>
-
 <h4>Employee</h4>
 <hr />
 <div class="row">
-    <div class="col-md-12">  @* Make the form take full width *@
+    <div class="col-md-12">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Create Employee</h5>
@@ -36,7 +35,7 @@
                     <div class="row mb-3">
                         <label asp-for="DateOfBirth" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="DateOfBirth" class="form-control" type="date" /> @* Use type="date" *@
+                            <input asp-for="DateOfBirth" type="date" class="form-control" />
                             <span asp-validation-for="DateOfBirth" class="text-danger"></span>
                         </div>
                     </div>
@@ -44,10 +43,9 @@
                     <div class="row mb-3">
                         <label asp-for="Gender" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <select asp-for="Gender" class="form-control">  @* Use a select for Gender *@
+                            <select asp-for="Gender" class="form-control">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
-                                <option value="Other">Other</option>
                             </select>
                             <span asp-validation-for="Gender" class="text-danger"></span>
                         </div>
@@ -62,33 +60,9 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="LocalAddress" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="LocalAddress" class="form-control" />
-                            <span asp-validation-for="LocalAddress" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label asp-for="PermanentAddress" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="PermanentAddress" class="form-control" />
-                            <span asp-validation-for="PermanentAddress" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label asp-for="Photo" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="Photo" class="form-control" type="file" /> @* Use type="file" for photos *@
-                            <span asp-validation-for="Photo" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
                         <label asp-for="Email" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="Email" class="form-control" type="email" /> @* Use type="email" *@
+                            <input asp-for="Email" class="form-control" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                     </div>
@@ -96,19 +70,15 @@
                     <div class="row mb-3">
                         <label asp-for="DepartmentId" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId"></select>
+                            <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId" id="DepartmentDropdown"></select>
+                            <span asp-validation-for="DepartmentId" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="Status" class="col-sm-2 col-form-label"></label>
+                        <label class="col-sm-2 col-form-label">Designation</label>
                         <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" asp-for="Status" type="checkbox" id="gridCheck1">
-                                <label class="form-check-label" for="gridCheck1">
-                                    @Html.DisplayNameFor(model => model.Status)
-                                </label>
-                            </div>
+                            <input type="text" id="DesignationField" class="form-control" readonly />
                         </div>
                     </div>
 
@@ -136,29 +106,11 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <label asp-for="BankDetailId" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <select asp-for="BankDetailId" class="form-control" asp-items="ViewBag.BankDetailId"></select>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label asp-for="PayslipId" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="PayslipId" class="form-control" />
-                            <span asp-validation-for="PayslipId" class="text-danger"></span>
-                        </div>
-                    </div>
-
-
-
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <button type="reset" class="btn btn-secondary">Reset</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
@@ -170,4 +122,28 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#DepartmentDropdown").change(function () {
+                var departmentId = $(this).val();
+                if (departmentId) {
+                    $.ajax({
+                        url: "/Employee/GetDesignation",
+                        type: "GET",
+                        data: { departmentId: departmentId },
+                        success: function (data) {
+                            $("#DesignationField").val(data);
+                        },
+                        error: function () {
+                            $("#DesignationField").val("Error fetching designation");
+                        }
+                    });
+                } else {
+                    $("#DesignationField").val("");
+                }
+            });
+        });
+    </script>
 }

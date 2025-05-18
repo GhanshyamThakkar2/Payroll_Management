@@ -2,22 +2,19 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a> @* Styled Create button *@
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-
-<table class="table datatable"> @* Added datatable class *@
+<table class="table datatable">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.DepartmentName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Designation)
             </th>
             <th></th>
         </tr>
@@ -30,26 +27,23 @@
                     @Html.DisplayFor(modelItem => item.DepartmentName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Designation)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.DepartmentId" class="btn btn-sm btn-primary">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.DepartmentId" class="btn btn-sm btn-info">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.DepartmentId" class="btn btn-sm btn-danger">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.DepartmentId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DepartmentId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DepartmentId">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
+<!-- Initialize DataTables -->
 <script>
     $(document).ready(function () {
-        $('.datatable').DataTable({ // Initialize DataTables
-            paging: true,
-            searching: true,
-            ordering: true,
-            info: true,
-            pageLength: 10
+        $('.datatable').DataTable({
+            paging: true, // Enable pagination
+            searching: true, // Enable search
+            ordering: true, // Enable sorting
+            info: true, // Show table information
+            pageLength: 10, // Set number of rows per page
         });
     });
 </script>

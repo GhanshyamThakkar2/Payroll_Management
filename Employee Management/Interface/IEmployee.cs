@@ -12,5 +12,8 @@ namespace Employee_Management.Interface
         void DeleteEmployee(int id);
         IEnumerable<Employee> GetEmployeesByDepartment(int departmentId);
         bool EmployeeExists(int id);
+
+        // ✅ New method to get designations by department
+        IEnumerable<Designation> GetDesignationsByDepartment(int departmentId);
     }
 }

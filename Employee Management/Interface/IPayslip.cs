@@ -12,7 +12,7 @@ namespace Employee_Management.Interface
         void DeletePayslip(int payslipId);
         IEnumerable<Payslip> GetPayslipsByEmployeeId(int employeeId);
         IEnumerable<Payslip> GetPayslipsByDepartmentId(int departmentId);
-        IEnumerable<Payslip> GetPayslipsByYearAndMonth(int year, string month);        
+        IEnumerable<Payslip> GetPayslipsByYearAndMonth(int year, int month);        
         bool PayslipExists(int payslipId);
     }
 }

@@ -2,15 +2,15 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a> @* Styled Create button *@
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-
-<table class="table datatable"> @* Added datatable class *@
+<table class="table datatable">
     <thead>
         <tr>
             <th>
@@ -37,54 +37,74 @@
             <th>
                 @Html.DisplayNameFor(model => model.NetSalary)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayslipDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasicSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalAllowances)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalDeductions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PayslipId" >Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PayslipId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PayslipId">Delete</a>
+            </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Employee.Name) @* Display Employee Name *@
+                    <!-- Download PDF Button -->
+                    <a href="@Url.Content("~/payslips/Payslip@item.EmployeeId@item.Month@item.Year.pdf")"
+                       class="btn btn-success"
+                       target="_blank">Download PDF</a>
+
+
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Month)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PayslipDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BasicSalary)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TotalAllowances)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TotalDeductions)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NetSalary)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.PayslipId" class="btn btn-sm btn-primary">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.PayslipId" class="btn btn-sm btn-info">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.PayslipId" class="btn btn-sm btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
+        </tr>
+}
     </tbody>
 </table>
-
+<!-- Initialize DataTables -->
 <script>
     $(document).ready(function () {
-        $('.datatable').DataTable({ // Initialize DataTables
-            paging: true,
-            searching: true,
-            ordering: true,
-            info: true,
-            pageLength: 10
+        $('.datatable').DataTable({
+            paging: true, // Enable pagination
+            searching: true, // Enable search
+            ordering: true, // Enable sorting
+            info: true, // Show table information
+            pageLength: 10, // Set number of rows per page
         });
     });
 </script>

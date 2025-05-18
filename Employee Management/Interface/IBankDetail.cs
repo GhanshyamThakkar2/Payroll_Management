@@ -11,6 +11,6 @@ namespace Employee_Management.Interface
         void UpdateBankDetail(BankDetail bankDetail);
         void DeleteBankDetail(int id);
         BankDetail GetBankDetailByEmployeeId(int employeeId);
-        bool BankDetailExists(int employeeId);
+        bool BankDetailExistsByEmployeeId(int employeeId);
     }
 }

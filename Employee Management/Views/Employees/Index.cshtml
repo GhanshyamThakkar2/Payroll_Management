@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Index</h1>
@@ -9,7 +10,6 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-
 <table class="table datatable">
     <thead>
         <tr>
@@ -17,8 +17,26 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Photo)
+                @Html.DisplayNameFor(model => model.FatherName)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocalAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PermanentAddress)
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.Photo) *@
+            @* </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
@@ -26,41 +44,69 @@
                 @Html.DisplayNameFor(model => model.Department)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Status)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BankDetail)
+                @Html.DisplayNameFor(model => model.BasicSalary)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PayslipId)
+                @Html.DisplayNameFor(model => model.Allowance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deduction)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Photo)
+                    @Html.DisplayFor(modelItem => item.FatherName)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocalAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PermanentAddress)
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Department.DepartmentId)
+                    @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation.Title)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Status)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BankDetail.BankDetailId)
+                    @Html.DisplayFor(modelItem => item.BasicSalary)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PayslipId)
+                    @Html.DisplayFor(modelItem => item.Allowance)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deduction)
+                </td>
+                
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
@@ -70,16 +116,3 @@
         }
     </tbody>
 </table>
-
-<!-- Initialize DataTables -->
-<script>
-    $(document).ready(function () {
-        $('.datatable').DataTable({
-            paging: true, // Enable pagination
-            searching: true, // Enable search
-            ordering: true, // Enable sorting
-            info: true, // Show table information
-            pageLength: 10, // Set number of rows per page
-        });
-    });
-</script>   

@@ -8,6 +8,7 @@ namespace Employee_Management.Models
         public string DepartmentName { get; set; }
         //Navigation Property
         public ICollection<Employee> Employees { get; set; }
-        public string Designation { get; set; }
+        // Navigation Property: One department can have multiple designations
+        public ICollection<Designation> Designations { get; set; }
     }
 }

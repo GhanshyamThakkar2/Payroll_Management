@@ -1,89 +1,89 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "A:\\Payrol\\Payroll_Management\\",
+  "WorkspaceRootPath": "D:\\Payrol\\Payroll_Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\employees\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\departments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\departments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\departments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\employees\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\employees\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\employees\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\bankdetails\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\bankdetails\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\bankdetails\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\payslips\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\payslips\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\payslips\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\employees\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\employees\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\employees\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\departments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\departments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\departments\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\bankdetails\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\bankdetails\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\bankdetails\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\payslips\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\payslips\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\payslips\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\payslips\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\payslips\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\payslips\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\bankdetails\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\bankdetails\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\bankdetails\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\departments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\departments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\departments\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\employees\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\employees\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\employees\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\controllers\\bankdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\controllers\\bankdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\controllers\\bankdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\bankdetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\bankdetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\bankdetails\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|a:\\payrol\\payroll_management\\employee management\\views\\departments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|d:\\payrol\\payroll_management\\employee management\\views\\departments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D42E1093-85BE-416C-A472-E12B1BB9B2B7}|Employee Management\\Employee Management.csproj|solutionrelative:employee management\\views\\departments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -116,63 +116,59 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Create.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Create.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Employees\\Create.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Create.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Create.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Employees\\Create.cshtml",
               "ViewState": "AgIAACkAAAAAAAAAAAAgwJUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-16T13:31:35.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-16T13:31:35.345Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Create.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Create.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Departments\\Create.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Create.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Create.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Departments\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T06:29:51.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T06:29:51.837Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Edit.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Edit.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Edit.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Employees\\Edit.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Edit.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Edit.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Employees\\Edit.cshtml",
               "ViewState": "AgIAAFcAAAAAAAAAAAAAAGQAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-16T13:32:58.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-16T13:32:58.865Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Employee.cs",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Employee.cs",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "Employee Management\\Models\\Employee.cs",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Employee.cs",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Employee.cs",
               "RelativeToolTip": "Employee Management\\Models\\Employee.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAowAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T13:18:36.647Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-16T13:18:36.647Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Department.cs",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Department.cs",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Department.cs",
               "RelativeDocumentMoniker": "Employee Management\\Models\\Department.cs",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Department.cs",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Models\\Department.cs",
               "RelativeToolTip": "Employee Management\\Models\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-16T13:18:38.162Z",
               "EditorCaption": ""
@@ -181,22 +177,21 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "EmployeesController.cs",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Controllers\\EmployeesController.cs",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Controllers\\EmployeesController.cs",
               "RelativeDocumentMoniker": "Employee Management\\Controllers\\EmployeesController.cs",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Controllers\\EmployeesController.cs",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Controllers\\EmployeesController.cs",
               "RelativeToolTip": "Employee Management\\Controllers\\EmployeesController.cs",
               "ViewState": "AgIAAIAAAAAAAAAAAAAUwJAAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T06:00:25.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T06:00:25.432Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Delete.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Delete.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Delete.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Employees\\Delete.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Delete.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Delete.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Employees\\Delete.cshtml",
               "ViewState": "AgIAAJQAAAAAAAAAAAAiwK0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -206,22 +201,21 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Create.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Create.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\BankDetails\\Create.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Create.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Create.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\BankDetails\\Create.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T05:53:18.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T05:53:18.786Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Delete.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Delete.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Delete.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Departments\\Delete.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Delete.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Delete.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Departments\\Delete.cshtml",
               "ViewState": "AgIAAFsAAAAAAAAAAAAiwHUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -231,9 +225,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Delete.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Delete.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Delete.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\BankDetails\\Delete.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Delete.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Delete.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\BankDetails\\Delete.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAqwIUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -243,9 +237,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Delete.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Delete.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Delete.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Payslips\\Delete.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Delete.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Delete.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Payslips\\Delete.cshtml",
               "ViewState": "AgIAAHQAAAAAAAAAAAAkwJkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -255,22 +249,21 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAEcAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-15T09:31:53.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-15T09:31:53.124Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Index.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Index.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Payslips\\Index.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Index.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Index.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Payslips\\Index.cshtml",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAACYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -280,9 +273,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Details.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Details.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Payslips\\Details.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Details.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Payslips\\Details.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Payslips\\Details.cshtml",
               "ViewState": "AgIAABYAAAAAAAAAAAAqwJUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -292,9 +285,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Details.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Details.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\BankDetails\\Details.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Details.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Details.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\BankDetails\\Details.cshtml",
               "ViewState": "AgIAAGkAAAAAAAAAAAAiwIIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -304,9 +297,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Details.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Details.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Departments\\Details.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Details.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Details.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Departments\\Details.cshtml",
               "ViewState": "AgIAAFgAAAAAAAAAAAAiwHIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -316,9 +309,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Details.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Details.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Employees\\Details.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Details.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Employees\\Details.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Employees\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -328,9 +321,9 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "BankDetailsController.cs",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Controllers\\BankDetailsController.cs",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Controllers\\BankDetailsController.cs",
               "RelativeDocumentMoniker": "Employee Management\\Controllers\\BankDetailsController.cs",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Controllers\\BankDetailsController.cs",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Controllers\\BankDetailsController.cs",
               "RelativeToolTip": "Employee Management\\Controllers\\BankDetailsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -340,9 +333,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Index.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Index.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\BankDetails\\Index.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Index.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\BankDetails\\Index.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\BankDetails\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -352,9 +345,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "AppDBContext.cs",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\AppDBContext.cs",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Models\\AppDBContext.cs",
               "RelativeDocumentMoniker": "Employee Management\\Models\\AppDBContext.cs",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Models\\AppDBContext.cs",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Models\\AppDBContext.cs",
               "RelativeToolTip": "Employee Management\\Models\\AppDBContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -364,9 +357,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Index.cshtml",
+              "DocumentMoniker": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Index.cshtml",
               "RelativeDocumentMoniker": "Employee Management\\Views\\Departments\\Index.cshtml",
-              "ToolTip": "A:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Index.cshtml",
+              "ToolTip": "D:\\Payrol\\Payroll_Management\\Employee Management\\Views\\Departments\\Index.cshtml",
               "RelativeToolTip": "Employee Management\\Views\\Departments\\Index.cshtml",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAADYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",

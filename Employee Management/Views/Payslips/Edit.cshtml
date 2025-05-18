@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Edit</h1>
@@ -9,25 +10,24 @@
 <h4>Payslip</h4>
 <hr />
 <div class="row">
-    <div class="col-md-12"> @* Full width card *@
+    <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Edit Payslip</h5> @* Card title *@
-
+                <h5 class="card-title">Edit Payslip</h5>
                 <form asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="PayslipId" />
 
                     <div class="row mb-3">
-                        <label asp-for="EmployeeId" class="col-sm-2 col-form-label">Employee</label>
+                        <label asp-for="EmployeeId" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
-                            <span asp-validation-for="EmployeeId" class="text-danger"></span> @* Validation span added *@
+                            <span asp-validation-for="EmployeeId" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="Year" class="col-sm-2 col-form-label">Year</label>
+                        <label asp-for="Year" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Year" class="form-control" />
                             <span asp-validation-for="Year" class="text-danger"></span>
@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="Month" class="col-sm-2 col-form-label">Month</label>
+                        <label asp-for="Month" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Month" class="form-control" />
                             <span asp-validation-for="Month" class="text-danger"></span>
@@ -43,15 +43,15 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="PayslipDate" class="col-sm-2 col-form-label">Payslip Date</label>
+                        <label asp-for="PayslipDate" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="PayslipDate" class="form-control" type="date" /> @* Type date added *@
+                            <input asp-for="PayslipDate" class="form-control" type="date" />
                             <span asp-validation-for="PayslipDate" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="BasicSalary" class="col-sm-2 col-form-label">Basic Salary</label>
+                        <label asp-for="BasicSalary" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="BasicSalary" class="form-control" />
                             <span asp-validation-for="BasicSalary" class="text-danger"></span>
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="TotalAllowances" class="col-sm-2 col-form-label">Total Allowances</label>
+                        <label asp-for="TotalAllowances" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="TotalAllowances" class="form-control" />
                             <span asp-validation-for="TotalAllowances" class="text-danger"></span>
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="TotalDeductions" class="col-sm-2 col-form-label">Total Deductions</label>
+                        <label asp-for="TotalDeductions" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="TotalDeductions" class="form-control" />
                             <span asp-validation-for="TotalDeductions" class="text-danger"></span>
@@ -75,7 +75,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="NetSalary" class="col-sm-2 col-form-label">Net Salary</label>
+                        <label asp-for="NetSalary" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="NetSalary" class="form-control" />
                             <span asp-validation-for="NetSalary" class="text-danger"></span>
@@ -83,15 +83,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="PaymentMethod" class="col-sm-2 col-form-label">Payment Method</label>
-                        <div class="col-sm-10">
-                            <input asp-for="PaymentMethod" class="form-control" />
-                            <span asp-validation-for="PaymentMethod" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label asp-for="Status" class="col-sm-2 col-form-label">Status</label>
+                        <label asp-for="Status" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Status" class="form-control" />
                             <span asp-validation-for="Status" class="text-danger"></span>
@@ -99,7 +91,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="Comments" class="col-sm-2 col-form-label">Comments</label>
+                        <label asp-for="Comments" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Comments" class="form-control" />
                             <span asp-validation-for="Comments" class="text-danger"></span>
@@ -107,8 +99,8 @@
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" value="Save" class="btn btn-primary">Save</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button> @* Reset Button added *@
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
                     </div>
                 </form>
             </div>
@@ -117,9 +109,10 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

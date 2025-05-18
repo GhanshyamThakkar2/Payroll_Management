@@ -53,7 +53,7 @@ namespace Employee_Management.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DepartmentId,DepartmentName,Designation")] Department department)
+        public async Task<IActionResult> Create([Bind("DepartmentId,DepartmentName")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Employee_Management.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DepartmentId,DepartmentName,Designation")] Department department)
+        public async Task<IActionResult> Edit(int id, [Bind("DepartmentId,DepartmentName")] Department department)
         {
             if (id != department.DepartmentId)
             {

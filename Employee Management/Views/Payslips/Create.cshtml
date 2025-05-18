@@ -2,111 +2,133 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Payslip</h4>
+<h1>Create Payslip</h1>
 <hr />
 <div class="row">
-    <div class="col-md-12"> @* Full width card *@
+    <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Create Payslip</h5> @* Card title *@
-
+                <h5 class="card-title">Create Payslip</h5>
                 <form asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+                    <!-- Employee Selection -->
                     <div class="row mb-3">
-                        <label asp-for="EmployeeId" class="col-sm-2 col-form-label">Employee</label>
+                        <label asp-for="EmployeeId" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
+                            <select id="EmployeeId" asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId">
+                                <option value="">-- Select Employee --</option>
+                            </select>
                         </div>
                     </div>
 
+                    <!-- Year -->
                     <div class="row mb-3">
-                        <label asp-for="Year" class="col-sm-2 col-form-label">Year</label>
+                        <label asp-for="Year" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="Year" class="form-control" />
+                            <select asp-for="Year" class="form-control">
+                                @foreach (var year in new int[] { DateTime.Now.Year - 1, DateTime.Now.Year, DateTime.Now.Year + 1 })
+                                {
+                                    <option value="@year">@year</option>
+                                }
+                            </select>
                             <span asp-validation-for="Year" class="text-danger"></span>
                         </div>
                     </div>
 
+
+                    <!-- Month -->
                     <div class="row mb-3">
-                        <label asp-for="Month" class="col-sm-2 col-form-label">Month</label>
+                        <label asp-for="Month" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="Month" class="form-control" />
+                            <select asp-for="Month" class="form-control">
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
                             <span asp-validation-for="Month" class="text-danger"></span>
                         </div>
                     </div>
 
+
+                    <!-- Payslip Date -->
                     <div class="row mb-3">
-                        <label asp-for="PayslipDate" class="col-sm-2 col-form-label">Payslip Date</label>
+                        <label asp-for="PayslipDate" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="PayslipDate" class="form-control" type="date" /> @* Type date added *@
+                            <input asp-for="PayslipDate" class="form-control" type="date" id="PayslipDate" readonly />
                             <span asp-validation-for="PayslipDate" class="text-danger"></span>
                         </div>
                     </div>
 
+                    <!-- Basic Salary (Auto-Filled) -->
                     <div class="row mb-3">
-                        <label asp-for="BasicSalary" class="col-sm-2 col-form-label">Basic Salary</label>
+                        <label asp-for="BasicSalary" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="BasicSalary" class="form-control" />
-                            <span asp-validation-for="BasicSalary" class="text-danger"></span>
+                            <input asp-for="BasicSalary" class="form-control" id="basicSalary" readonly />
                         </div>
                     </div>
 
+                    <!-- Total Allowances (Auto-Filled) -->
                     <div class="row mb-3">
-                        <label asp-for="TotalAllowances" class="col-sm-2 col-form-label">Total Allowances</label>
+                        <label asp-for="TotalAllowances" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="TotalAllowances" class="form-control" />
-                            <span asp-validation-for="TotalAllowances" class="text-danger"></span>
+                            <input asp-for="TotalAllowances" class="form-control" id="allowance" readonly />
                         </div>
                     </div>
 
+                    <!-- Total Deductions (Auto-Filled) -->
                     <div class="row mb-3">
-                        <label asp-for="TotalDeductions" class="col-sm-2 col-form-label">Total Deductions</label>
+                        <label asp-for="TotalDeductions" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="TotalDeductions" class="form-control" />
-                            <span asp-validation-for="TotalDeductions" class="text-danger"></span>
+                            <input asp-for="TotalDeductions" class="form-control" id="deduction" readonly />
                         </div>
                     </div>
 
+                    <!-- Net Salary (Auto-Calculated) -->
                     <div class="row mb-3">
-                        <label asp-for="NetSalary" class="col-sm-2 col-form-label">Net Salary</label>
+                        <label asp-for="NetSalary" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="NetSalary" class="form-control" />
-                            <span asp-validation-for="NetSalary" class="text-danger"></span>
+                            <input asp-for="NetSalary" class="form-control" id="netSalary" readonly />
                         </div>
                     </div>
 
+                    <!-- Status -->
+                    
                     <div class="row mb-3">
-                        <label asp-for="PaymentMethod" class="col-sm-2 col-form-label">Payment Method</label>
+                        <label asp-for="Status" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="PaymentMethod" class="form-control" />
-                            <span asp-validation-for="PaymentMethod" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label asp-for="Status" class="col-sm-2 col-form-label">Status</label>
-                        <div class="col-sm-10">
-                            <input asp-for="Status" class="form-control" />
+                            <select asp-for="Status" class="form-control">
+                                <option value="1">Paid</option>
+                                <option value="2">Unpaid</option>
+                            </select>
                             <span asp-validation-for="Status" class="text-danger"></span>
                         </div>
                     </div>
 
+                    <!-- Comments -->
                     <div class="row mb-3">
-                        <label asp-for="Comments" class="col-sm-2 col-form-label">Comments</label>
+                        <label asp-for="Comments" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Comments" class="form-control" />
-                            <span asp-validation-for="Comments" class="text-danger"></span>
                         </div>
                     </div>
 
+                    <!-- Submit Button -->
                     <div class="text-center">
-                        <button type="submit" value="Create" class="btn btn-primary">Create</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button> @* Reset Button added *@
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
                     </div>
                 </form>
             </div>
@@ -114,11 +136,54 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
 
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // Set the current date in YYYY-MM-DD format
+            var today = new Date().toISOString().split('T')[0];
+            $("#PayslipDate").val(today);
+
+            $("#EmployeeId").change(function () {
+                var employeeId = $(this).val();
+
+                if (employeeId) {
+                    $.ajax({
+                        url: '/Payslips/GetEmployeeSalaryDetails', // API endpoint in controller
+                        type: 'GET',
+                        data: { employeeId: employeeId },
+                                success: function (data) {
+            console.log("AJAX Response:", data); // Debugging response
+            if (data) {
+                $("#basicSalary").val(data.basicSalary);
+                $("#allowance").val(data.totalAllowances);
+                $("#deduction").val(data.totalDeductions);
+                CalculateNetSalary();
+            } else {
+                console.log("No data returned from the server!");
+            }
+        },
+        error: function (xhr, status, error) {
+            console.log("AJAX Error:", xhr.responseText);
+        }
+                    });
+                }
+            });
+
+                    function CalculateNetSalary() {
+            var basicSalary = parseFloat($("#basicSalary").val()) || 0;
+            var allowances = parseFloat($("#allowance").val()) || 0;
+            var deductions = parseFloat($("#deduction").val()) || 0;
+            var netSalary = (basicSalary + allowances - deductions).toFixed(2);
+            $("#netSalary").val(netSalary);
+        }
+
+        });
+    </script>
+
+
+}

@@ -1,36 +1,45 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Employee_Management.Models;
+using Employee_Management.Interface;
 
 namespace Employee_Management.Controllers
 {
     public class EmployeesController : Controller
     {
         private readonly AppDBContext _context;
+        private readonly IEmployee _employeeRepository;
 
-        public EmployeesController(AppDBContext context)
+        public EmployeesController(AppDBContext context, IEmployee employeeRepository)
         {
             _context = context;
+            _employeeRepository = employeeRepository;
         }
 
-        public async Task<IActionResult> Index()
+        // ✅ GET: Employees (With Pagination)
+        public IActionResult Index(int page = 1, int pageSize = 10)
         {
-            var employees = _context.Employees.Include(e => e.BankDetail).Include(e => e.Department).AsNoTracking();
-            return View(await employees.ToListAsync());
+            var employees = _employeeRepository.GetAllEmployees()
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            return View(employees);
         }
 
-        public async Task<IActionResult> Details(int? id)
+        // ✅ GET: Employees/Details/5
+        public async Task<IActionResult> DetailsAsync(int? id)
         {
             if (id == null) return NotFound();
 
             var employee = await _context.Employees
-                .Include(e => e.BankDetail)
                 .Include(e => e.Department)
-                .AsNoTracking()
+                .Include(e => e.Designation)
                 .FirstOrDefaultAsync(m => m.EmployeeId == id);
 
             if (employee == null) return NotFound();
@@ -38,47 +47,57 @@ namespace Employee_Management.Controllers
             return View(employee);
         }
 
+        // ✅ GET: Employees/Create
         public IActionResult Create()
         {
-            PopulateDropDownLists();
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "DepartmentId", "DepartmentName");
+            ViewData["DesignationId"] = new SelectList(new List<Designation>(), "DesignationId", "Title");
             return View();
         }
 
+
+        // ✅ POST: Employees/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Employee employee)
+        public async Task<IActionResult> CreateAsync(Employee employee)
         {
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Add(employee);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
-                catch (Exception ex)
-                {
-                    ModelState.AddModelError("", $"An error occurred: {ex.Message}");
-                }
+                _context.Employees.Add(employee);
+                await _context.SaveChangesAsync();
+
+
+                return RedirectToAction(nameof(Index));
             }
-            PopulateDropDownLists(employee);
+
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "DepartmentId", "DepartmentName", employee.DepartmentId);
+            ViewData["DesignationId"] = new SelectList(_context.Designations.Where(d => d.DepartmentId == employee.DepartmentId), "DesignationId", "Title", employee.DesignationId);
+
+
             return View(employee);
         }
 
-        public async Task<IActionResult> Edit(int? id)
+        // ✅ GET: Employees/Edit/5
+        public async Task<IActionResult> EditAsync(int? id)
         {
             if (id == null) return NotFound();
 
-            var employee = await _context.Employees.FindAsync(id);
+            var employee = await _context.Employees
+                .FirstOrDefaultAsync(e => e.EmployeeId == id);
+
             if (employee == null) return NotFound();
 
-            PopulateDropDownLists(employee);
+
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "DepartmentId", "DepartmentName", employee.DepartmentId);
+            ViewData["DesignationId"] = new SelectList(_context.Designations.Where(d => d.DepartmentId == employee.DepartmentId), "DesignationId", "Title", employee.DesignationId);
+
             return View(employee);
         }
 
+        // ✅ POST: Employees/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Employee employee)
+        public async Task<IActionResult> EditAsync(int id, Employee employee)
         {
             if (id != employee.EmployeeId) return NotFound();
 
@@ -86,68 +105,63 @@ namespace Employee_Management.Controllers
             {
                 try
                 {
-                    _context.Update(employee);
+                    _context.Employees.Update(employee);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.EmployeeId)) return NotFound();
+                    if (!_employeeRepository.EmployeeExists(employee.EmployeeId)) return NotFound();
                     else throw;
                 }
+                return RedirectToAction(nameof(Index));
             }
-            PopulateDropDownLists(employee);
+
+            ViewData["DepartmentId"] = new SelectList(_context.Departments, "DepartmentId", "DepartmentName", employee.DepartmentId);
+            ViewData["DesignationId"] = new SelectList(_context.Designations.Where(d => d.DepartmentId == employee.DepartmentId), "DesignationId", "Title", employee.DesignationId);
+
+
             return View(employee);
         }
 
-        public async Task<IActionResult> Delete(int? id)
+        // ✅ GET: Employees/Delete/5
+        public async Task<IActionResult> DeleteAsync(int? id)
         {
             if (id == null) return NotFound();
 
             var employee = await _context.Employees
-                .Include(e => e.BankDetail)
                 .Include(e => e.Department)
-                .AsNoTracking()
+                .Include(e => e.Designation)
                 .FirstOrDefaultAsync(m => m.EmployeeId == id);
-
             if (employee == null) return NotFound();
 
             return View(employee);
         }
 
+        // ✅ POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var employee = await _context.Employees.FindAsync(id);
-            if (employee != null)
+            var employee = _employeeRepository.GetEmployeeById(id);
+            if (employee == null) return NotFound();
+
+            if (employee.Payslips.Any())
             {
-                _context.Employees.Remove(employee);
-                await _context.SaveChangesAsync();
+                TempData["Error"] = "Cannot delete an employee with existing payslips.";
+                return RedirectToAction(nameof(Index));
             }
+
+            _employeeRepository.DeleteEmployee(id);
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EmployeeExists(int id)
-        {
-            return _context.Employees.Any(e => e.EmployeeId == id);
-        }
 
-        private void PopulateDropDownLists(Employee employee = null)
-        {
-            ViewData["BankDetailId"] = new SelectList(_context.BankDetails, "BankDetailId", "BankDetailId", employee?.BankDetailId);
-            ViewData["DepartmentId"] = new SelectList(_context.Departments, "DepartmentId", "DepartmentName", employee?.DepartmentId);
-        }
+        // ✅ AJAX: Get Designations by Department
         [HttpGet]
-        public JsonResult GetDesignation(int departmentId)
+        public JsonResult GetDesignationsByDepartment(int departmentId)
         {
-            var designation = _context.Departments
-                                      .Where(d => d.DepartmentId == departmentId)
-                                      .Select(d => d.Designation)
-                                      .FirstOrDefault();
-
-            return Json(designation ?? "No designation found");
+            var designations = _employeeRepository.GetDesignationsByDepartment(departmentId);
+            return Json(designations);
         }
-
     }
 }

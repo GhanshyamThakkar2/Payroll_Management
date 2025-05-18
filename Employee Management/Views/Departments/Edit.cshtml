@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Edit</h1>
@@ -9,34 +10,25 @@
 <h4>Department</h4>
 <hr />
 <div class="row">
-    <div class="col-md-12"> @* Full width card *@
+    <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Edit Department</h5> @* Card title *@
-
+                <h5 class="card-title">Edit Department</h5>
                 <form asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="DepartmentId" />
 
                     <div class="row mb-3">
-                        <label asp-for="DepartmentName" class="col-sm-2 col-form-label">Department Name</label>
+                        <label asp-for="DepartmentName" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="DepartmentName" class="form-control" />
                             <span asp-validation-for="DepartmentName" class="text-danger"></span>
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <label asp-for="Designation" class="col-sm-2 col-form-label">Designation</label>
-                        <div class="col-sm-10">
-                            <input asp-for="Designation" class="form-control" />
-                            <span asp-validation-for="Designation" class="text-danger"></span>
-                        </div>
-                    </div>
-
                     <div class="text-center">
-                        <button type="submit" value="Save" class="btn btn-primary">Save</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button> @* Reset Button added *@
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
                     </div>
                 </form>
             </div>
@@ -45,10 +37,10 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
-

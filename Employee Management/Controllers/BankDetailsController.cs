@@ -19,10 +19,15 @@ namespace Employee_Management.Controllers
         }
 
         // GET: BankDetails
+        
         public async Task<IActionResult> Index()
         {
-            return View(await _context.BankDetails.ToListAsync());
+            var bankDetails = await _context.BankDetails
+                                            .Include(b => b.Employee)   // <-- Include Employee correctly
+                                            .ToListAsync();             // <-- Fetch including Employee
+            return View(bankDetails);
         }
+
 
         // GET: BankDetails/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -33,6 +38,7 @@ namespace Employee_Management.Controllers
             }
 
             var bankDetail = await _context.BankDetails
+                .Include(b => b.Employee)
                 .FirstOrDefaultAsync(m => m.BankDetailId == id);
             if (bankDetail == null)
             {
@@ -45,6 +51,7 @@ namespace Employee_Management.Controllers
         // GET: BankDetails/Create
         public IActionResult Create()
         {
+            ViewData["Employees"] = new SelectList(_context.Employees, "EmployeeId", "Name"); // Populating Employee Dropdown
             return View();
         }
 
@@ -61,6 +68,7 @@ namespace Employee_Management.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Employees"] = new SelectList(_context.Employees, "EmployeeId", "Name", bankDetail.EmployeeId); // Keep dropdown populated
             return View(bankDetail);
         }
 
@@ -77,6 +85,7 @@ namespace Employee_Management.Controllers
             {
                 return NotFound();
             }
+            ViewData["Employees"] = new SelectList(_context.Employees, "EmployeeId", "Name", bankDetail.EmployeeId); // Keep existing selection
             return View(bankDetail);
         }
 
@@ -112,6 +121,7 @@ namespace Employee_Management.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Employees"] = new SelectList(_context.Employees, "EmployeeId", "Name", bankDetail.EmployeeId); // Keep dropdown populated
             return View(bankDetail);
         }
 
@@ -124,6 +134,7 @@ namespace Employee_Management.Controllers
             }
 
             var bankDetail = await _context.BankDetails
+                .Include(b => b.Employee)
                 .FirstOrDefaultAsync(m => m.BankDetailId == id);
             if (bankDetail == null)
             {

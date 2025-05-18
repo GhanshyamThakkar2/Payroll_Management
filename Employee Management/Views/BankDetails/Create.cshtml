@@ -2,23 +2,23 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Create</h1>
 
-<h4>BankDetail</h4>
+<h4>Bank Detail</h4>
 <hr />
 <div class="row">
-    <div class="col-md-12"> @* Full width card *@
+    <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Create Bank Details</h5> @* Card title *@
-
+                <h5 class="card-title">Create Bank Detail</h5>
                 <form asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="row mb-3">
-                        <label asp-for="AccountHolderName" class="col-sm-2 col-form-label">Account Holder Name</label>
+                        <label asp-for="AccountHolderName" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="AccountHolderName" class="form-control" />
                             <span asp-validation-for="AccountHolderName" class="text-danger"></span>
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="AccountNumber" class="col-sm-2 col-form-label">Account Number</label>
+                        <label asp-for="AccountNumber" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="AccountNumber" class="form-control" />
                             <span asp-validation-for="AccountNumber" class="text-danger"></span>
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="IFSCCode" class="col-sm-2 col-form-label">IFSC Code</label>
+                        <label asp-for="IFSCCode" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="IFSCCode" class="form-control" />
                             <span asp-validation-for="IFSCCode" class="text-danger"></span>
@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="BankName" class="col-sm-2 col-form-label">Bank Name</label>
+                        <label asp-for="BankName" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="BankName" class="form-control" />
                             <span asp-validation-for="BankName" class="text-danger"></span>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="Branch" class="col-sm-2 col-form-label">Branch</label>
+                        <label asp-for="Branch" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
                             <input asp-for="Branch" class="form-control" />
                             <span asp-validation-for="Branch" class="text-danger"></span>
@@ -58,16 +58,19 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="EmployeeId" class="col-sm-2 col-form-label">Employee ID</label>
+                        <label asp-for="Employee" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <input asp-for="EmployeeId" class="form-control" />
+                            <select asp-for="EmployeeId" asp-items="ViewBag.Employees" class="form-control">
+                                <option value="">-- Select Employee --</option>
+                            </select>
                             <span asp-validation-for="EmployeeId" class="text-danger"></span>
                         </div>
                     </div>
 
+
                     <div class="text-center">
-                        <button type="submit" value="Create" class="btn btn-primary">Create</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button> @* Reset Button added *@
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
                     </div>
                 </form>
             </div>
@@ -75,10 +78,8 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

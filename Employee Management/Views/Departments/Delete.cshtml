@@ -2,95 +2,8 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<style>
-    /* Basic Styling */
-    body {
-        font-family: sans-serif;
-    }
-
-    h1, h3 {
-        color: #333;
-    }
-
-    h4 {
-        margin-bottom: 20px;
-    }
-
-    .dl-horizontal {
-        margin-bottom: 20px;
-    }
-
-    .dl-horizontal dt {
-        font-weight: bold;
-        white-space: nowrap;
-    }
-
-    .dl-horizontal dd {
-        margin-left: 160px;
-    }
-
-    /* Table-like appearance (alternative) */
-    .dl-table {
-        display: table;
-        width: 100%;
-    }
-
-    .dl-table .row {
-        display: table-row;
-    }
-
-    .dl-table dt,
-    .dl-table dd {
-        display: table-cell;
-        padding: 8px;
-        vertical-align: top;
-        border-bottom: 1px solid #eee;
-    }
-
-    .dl-table dt {
-        width: 200px;
-    }
-
-    /* Buttons */
-    .btn {
-        display: inline-block;
-        padding: 6px 12px;
-        margin-bottom: 0;
-        font-size: 14px;
-        font-weight: normal;
-        line-height: 1.42857143;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        cursor: pointer;
-        border: 1px solid transparent;
-        border-radius: 4px;
-    }
-
-    .btn-danger {
-        color: #fff;
-        background-color: #d9534f; /* Bootstrap danger color */
-        border-color: #d9534f;
-    }
-
-    .btn-default {
-        color: #333;
-        background-color: #fff;
-        border-color: #ccc;
-    }
-
-    /* Back to List Link */
-    a {
-        color: #007bff; /* Bootstrap primary color */
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-</style>
 
 <h1>Delete</h1>
 
@@ -98,21 +11,18 @@
 <div>
     <h4>Department</h4>
     <hr />
-    <dl class="dl-table">
-        @* Or dl-horizontal if you prefer *@
-        <div class="row">
-            <dt>@Html.DisplayNameFor(model => model.DepartmentName)</dt>
-            <dd>@Html.DisplayFor(model => model.DepartmentName)</dd>
-        </div>
-        <div class="row">
-            <dt>@Html.DisplayNameFor(model => model.Designation)</dt>
-            <dd>@Html.DisplayFor(model => model.Designation)</dd>
-        </div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DepartmentName)
+        </dd>
     </dl>
-
+    
     <form asp-action="Delete">
         <input type="hidden" asp-for="DepartmentId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index" class="btn btn-default">Back to List</a>
+        <a asp-action="Index">Back to List</a>
     </form>
 </div>

@@ -22,6 +22,7 @@ namespace Employee_Management.Repository
             return _context.BankDetails.Include(b => b.Employee).ToList();
         }
 
+        // Retrieve a single bank detail by ID
         public BankDetail GetBankDetailById(int id)
         {
             return _context.BankDetails.Include(b => b.Employee)
@@ -35,6 +36,7 @@ namespace Employee_Management.Repository
             _context.SaveChanges();
         }
 
+        // Update an existing bank detail
         public void UpdateBankDetail(BankDetail bankDetail)
         {
             _context.BankDetails.Update(bankDetail);
@@ -52,14 +54,15 @@ namespace Employee_Management.Repository
             }
         }
 
+        // ✅ FIXED: Get bank detail by EmployeeId (use EmployeeId directly)
         public BankDetail GetBankDetailByEmployeeId(int employeeId)
         {
-            return _context.BankDetails.Include(b => b.Employee)
-                                       .FirstOrDefault(b => b.Employee.EmployeeId == employeeId);
+            return _context.BankDetails
+                           .FirstOrDefault(b => b.EmployeeId == employeeId);
         }
 
         // Check if a bank detail exists by ID
-        public bool BankDetailExists(int id)
+        public bool BankDetailExistsByEmployeeId(int id)
         {
             return _context.BankDetails.Any(b => b.BankDetailId == id);
         }

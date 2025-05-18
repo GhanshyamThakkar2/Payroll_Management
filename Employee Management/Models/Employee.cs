@@ -17,17 +17,18 @@ namespace Employee_Management.Models
         public string Photo { get; set; }
         public string Email { get; set; }
         public int DepartmentId { get; set; }
-        public Department Department { get; set; } 
+        public Department Department { get; set; }
+
+        // Foreign Key for Designation (Newly Added)
+        public int DesignationId { get; set; }
+        public Designation Designation { get; set; }  // Navigation Property
         public bool Status { get; set; } // Active or Inactive
         public decimal BasicSalary { get; set; }
         public decimal Allowance { get; set; }
         public decimal Deduction { get; set; }
-        public int BankDetailId { get; set; }
-        //Navigation Property One-To-One
-        public BankDetail BankDetail { get; set; }
-        public int PayslipId { get; set; }
+        //public int PayslipId { get; set; }
         //One to many
-        public ICollection<Payslip> Payslip { get; set; }
+        public ICollection<Payslip> Payslips { get; set; }
         //public Login Login { get; set; }
     }
 }

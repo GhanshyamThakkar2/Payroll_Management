@@ -29,15 +29,6 @@
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LocalAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PermanentAddress)
-            @* </th> *@
-            @* <th> *@
-            @*     @Html.DisplayNameFor(model => model.Photo) *@
-            @* </th> *@
-            <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
@@ -45,9 +36,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Designation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.BasicSalary)
@@ -58,6 +46,16 @@
             <th>
                 @Html.DisplayNameFor(model => model.Deduction)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocalAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PermanentAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            
             <th></th>
         </tr>
     </thead>
@@ -81,11 +79,6 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.LocalAddress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PermanentAddress)
-                <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
@@ -93,9 +86,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Designation.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.BasicSalary)
@@ -106,11 +96,21 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Deduction)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocalAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PermanentAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                
                 
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> 
+                    @* <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a> *@
                 </td>
             </tr>
         }

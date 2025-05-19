@@ -9,7 +9,7 @@ namespace Employee_Management.Interface
         Employee GetEmployeeById(int id);
         void AddEmployee(Employee employee);
         void UpdateEmployee(Employee employee);
-        void DeleteEmployee(int id);
+        //void DeleteEmployee(int id);
         IEnumerable<Employee> GetEmployeesByDepartment(int departmentId);
         bool EmployeeExists(int id);
 

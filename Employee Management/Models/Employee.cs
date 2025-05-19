@@ -13,8 +13,6 @@ namespace Employee_Management.Models
         public string Phone { get; set; }
         public string LocalAddress { get; set; }
         public string PermanentAddress { get; set; }
-        //public string Nationality { get; set; }
-        public string Photo { get; set; }
         public string Email { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
@@ -26,7 +24,6 @@ namespace Employee_Management.Models
         public decimal BasicSalary { get; set; }
         public decimal Allowance { get; set; }
         public decimal Deduction { get; set; }
-        //public int PayslipId { get; set; }
         //One to many
         public ICollection<Payslip> Payslips { get; set; }
         //public Login Login { get; set; }

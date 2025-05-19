@@ -48,21 +48,21 @@ namespace Employee_Management.Repository
         }
 
         // Delete an employee by ID (First delete BankDetail if exists)
-        public void DeleteEmployee(int id)
-        {
-            var bankDetail = _context.BankDetails.FirstOrDefault(b => b.EmployeeId == id);
-            if (bankDetail != null)
-            {
-                _context.BankDetails.Remove(bankDetail);
-            }
+        //public void DeleteEmployee(int id)
+        //{
+        //    var bankDetail = _context.BankDetails.FirstOrDefault(b => b.EmployeeId == id);
+        //    if (bankDetail != null)
+        //    {
+        //        _context.BankDetails.Remove(bankDetail);
+        //    }
 
-            var employee = _context.Employees.Find(id);
-            if (employee != null)
-            {
-                _context.Employees.Remove(employee);
-                _context.SaveChanges();
-            }
-        }
+        //    var employee = _context.Employees.Find(id);
+        //    if (employee != null)
+        //    {
+        //        _context.Employees.Remove(employee);
+        //        _context.SaveChanges();
+        //    }
+        //}
 
         // Retrieve employees by department
         public IEnumerable<Employee> GetEmployeesByDepartment(int departmentId)

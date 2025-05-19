@@ -124,36 +124,36 @@ namespace Employee_Management.Controllers
         }
 
         // ✅ GET: Employees/Delete/5
-        public async Task<IActionResult> DeleteAsync(int? id)
-        {
-            if (id == null) return NotFound();
+        //public async Task<IActionResult> DeleteAsync(int? id)
+        //{
+        //    if (id == null) return NotFound();
 
-            var employee = await _context.Employees
-                .Include(e => e.Department)
-                .Include(e => e.Designation)
-                .FirstOrDefaultAsync(m => m.EmployeeId == id);
-            if (employee == null) return NotFound();
+        //    var employee = await _context.Employees
+        //        .Include(e => e.Department)
+        //        .Include(e => e.Designation)
+        //        .FirstOrDefaultAsync(m => m.EmployeeId == id);
+        //    if (employee == null) return NotFound();
 
-            return View(employee);
-        }
+        //    return View(employee);
+        //}
 
         // ✅ POST: Employees/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id)
-        {
-            var employee = _employeeRepository.GetEmployeeById(id);
-            if (employee == null) return NotFound();
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult DeleteConfirmed(int id)
+        //{
+        //    var employee = _employeeRepository.GetEmployeeById(id);
+        //    if (employee == null) return NotFound();
 
-            if (employee.Payslips.Any())
-            {
-                TempData["Error"] = "Cannot delete an employee with existing payslips.";
-                return RedirectToAction(nameof(Index));
-            }
+        //    if (employee.Payslips.Any())
+        //    {
+        //        TempData["Error"] = "Cannot delete an employee with existing payslips.";
+        //        return RedirectToAction(nameof(Index));
+        //    }
 
-            _employeeRepository.DeleteEmployee(id);
-            return RedirectToAction(nameof(Index));
-        }
+        //    _employeeRepository.DeleteEmployee(id);
+        //    return RedirectToAction(nameof(Index));
+        //}
 
 
         // ✅ AJAX: Get Designations by Department

@@ -1,8 +1,97 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@model dynamic
+@{
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<div class="pagetitle">
+    <h1>Dashboard</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+    <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+            <div class="row">
+
+                <div class="col-xxl-4 col-md-4">
+                    <div class="card info-card sales-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Employees <span>| Total</span></h5>
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Manage</h6>
+                                    <span class="text-success small pt-1 fw-bold"><a asp-controller="Employees" asp-action="Index" class="text-success">View All</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-4 col-md-4">
+                    <div class="card info-card revenue-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Departments <span>| Active</span></h5>
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Explore</h6>
+                                    <span class="text-primary small pt-1 fw-bold"><a asp-controller="Departments" asp-action="Index" class="text-primary">Manage</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-4 col-md-4">
+                    <div class="card info-card customers-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Payroll <span>| Monthly</span></h5>
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-cash-stack"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Process</h6>
+                                    <span class="text-danger small pt-1 fw-bold"><a asp-controller="Payslips" asp-action="Index" class="text-danger">Generate</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-12 mt-4">
+            <div class="card p-5 text-center shadow-sm border-0 bg-white rounded-4">
+                <div class="mb-4">
+                    <div class="display-1 text-primary"><i class="bi bi-shield-check"></i></div>
+                </div>
+                <h2 class="fw-bold text-dark mb-3">Welcome to PayRoll Pro</h2>
+                <p class="text-muted lead mx-auto" style="max-width: 600px;">
+                    Your comprehensive solution for employee management, payroll processing, and organizational efficiency. 
+                    Manage your workforce with precision and ease.
+                </p>
+                <div class="mt-4">
+                    <a asp-controller="Employees" asp-action="Index" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">
+                        Go to Employee Directory
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -139,13 +139,12 @@ namespace Employee_Management.Controllers
         {
             if (id == null) return NotFound();
 
-            var payslip = await _context.Payslips
-                .Include(p => p.Employee)
-                .FirstOrDefaultAsync(m => m.PayslipId == id);
-
+            var payslip = await _context.Payslips.FindAsync(id);
             if (payslip == null) return NotFound();
 
-            return View(payslip);
+            _context.Payslips.Remove(payslip);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Payslips/Delete/5

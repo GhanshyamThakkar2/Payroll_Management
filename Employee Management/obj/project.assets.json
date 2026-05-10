@@ -7823,25 +7823,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Ghanshyam\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Payrol\\Payroll_Management\\Employee Management\\Employee Management.csproj",
+      "projectUniqueName": "C:\\Personal Project\\Payroll_Management\\Employee Management\\Employee Management.csproj",
       "projectName": "Employee Management",
-      "projectPath": "D:\\Payrol\\Payroll_Management\\Employee Management\\Employee Management.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Payrol\\Payroll_Management\\Employee Management\\obj\\",
+      "projectPath": "C:\\Personal Project\\Payroll_Management\\Employee Management\\Employee Management.csproj",
+      "packagesPath": "C:\\Users\\Ghanshyam\\.nuget\\packages\\",
+      "outputPath": "C:\\Personal Project\\Payroll_Management\\Employee Management\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ghanshyam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7851,10 +7849,12 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -7869,10 +7869,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0": {
+        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
@@ -7917,7 +7918,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

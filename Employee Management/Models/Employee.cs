@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -33,11 +33,11 @@ namespace Employee_Management.Models
         [EmailAddress(ErrorMessage = "Invalid Email format.")]
         public string Email { get; set; }
         public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public Department? Department { get; set; }
 
         // Foreign Key for Designation (Newly Added)
         public int DesignationId { get; set; }
-        public Designation Designation { get; set; }  // Navigation Property
+        public Designation? Designation { get; set; }  // Navigation Property
         public bool Status { get; set; } // Active or Inactive
         [Required(ErrorMessage = "Basic salary is required.")]
         [Range(0, double.MaxValue, ErrorMessage = "Salary must be a positive number.")]
@@ -47,7 +47,7 @@ namespace Employee_Management.Models
         [Range(0, double.MaxValue)]
         public decimal Deduction { get; set; }
         //One to many
-        public ICollection<Payslip> Payslips { get; set; }
+        public ICollection<Payslip>? Payslips { get; set; }
         //public Login Login { get; set; }
     }
 }

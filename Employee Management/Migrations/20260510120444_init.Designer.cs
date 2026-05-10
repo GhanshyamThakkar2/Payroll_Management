@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Employee_Management.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250214182232_init")]
-    partial class Init
+    [Migration("20260510120444_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.2")
+                .HasAnnotation("ProductVersion", "8.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -34,24 +34,35 @@ namespace Employee_Management.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BankDetailId"));
 
                     b.Property<string>("AccountHolderName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("AccountNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BankName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Branch")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
                     b.Property<string>("IFSCCode")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BankDetailId");
+
+                    b.HasIndex("EmployeeId")
+                        .IsUnique();
 
                     b.ToTable("BankDetails");
                 });
@@ -65,14 +76,36 @@ namespace Employee_Management.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"));
 
                     b.Property<string>("DepartmentName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Designation")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("DepartmentId");
 
                     b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("Employee_Management.Models.Designation", b =>
+                {
+                    b.Property<int>("DesignationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DesignationId"));
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("DesignationId");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("Designations");
                 });
 
             modelBuilder.Entity("Employee_Management.Models.Employee", b =>
@@ -86,9 +119,6 @@ namespace Employee_Management.Migrations
                     b.Property<decimal>("Allowance")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("BankDetailId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("BasicSalary")
                         .HasColumnType("decimal(18,2)");
 
@@ -101,31 +131,35 @@ namespace Employee_Management.Migrations
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
+                    b.Property<int>("DesignationId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FatherName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LocalAddress")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PayslipId")
-                        .HasColumnType("int");
-
                     b.Property<string>("PermanentAddress")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Photo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
@@ -133,10 +167,9 @@ namespace Employee_Management.Migrations
 
                     b.HasKey("EmployeeId");
 
-                    b.HasIndex("BankDetailId")
-                        .IsUnique();
-
                     b.HasIndex("DepartmentId");
+
+                    b.HasIndex("DesignationId");
 
                     b.ToTable("Employees");
                 });
@@ -153,25 +186,25 @@ namespace Employee_Management.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Comments")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Month")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Month")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("NetSalary")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("PaymentMethod")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PayslipDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<decimal>("TotalAllowances")
                         .HasColumnType("decimal(18,2)");
@@ -189,29 +222,51 @@ namespace Employee_Management.Migrations
                     b.ToTable("Payslips");
                 });
 
-            modelBuilder.Entity("Employee_Management.Models.Employee", b =>
+            modelBuilder.Entity("Employee_Management.Models.BankDetail", b =>
                 {
-                    b.HasOne("Employee_Management.Models.BankDetail", "BankDetail")
-                        .WithOne("Employee")
-                        .HasForeignKey("Employee_Management.Models.Employee", "BankDetailId")
+                    b.HasOne("Employee_Management.Models.Employee", "Employee")
+                        .WithOne()
+                        .HasForeignKey("Employee_Management.Models.BankDetail", "EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Employee_Management.Models.Designation", b =>
+                {
+                    b.HasOne("Employee_Management.Models.Department", "Department")
+                        .WithMany("Designations")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("Employee_Management.Models.Employee", b =>
+                {
                     b.HasOne("Employee_Management.Models.Department", "Department")
                         .WithMany("Employees")
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("BankDetail");
+                    b.HasOne("Employee_Management.Models.Designation", "Designation")
+                        .WithMany()
+                        .HasForeignKey("DesignationId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Department");
+
+                    b.Navigation("Designation");
                 });
 
             modelBuilder.Entity("Employee_Management.Models.Payslip", b =>
                 {
                     b.HasOne("Employee_Management.Models.Employee", "Employee")
-                        .WithMany("Payslip")
+                        .WithMany("Payslips")
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -219,19 +274,16 @@ namespace Employee_Management.Migrations
                     b.Navigation("Employee");
                 });
 
-            modelBuilder.Entity("Employee_Management.Models.BankDetail", b =>
-                {
-                    b.Navigation("Employee");
-                });
-
             modelBuilder.Entity("Employee_Management.Models.Department", b =>
                 {
+                    b.Navigation("Designations");
+
                     b.Navigation("Employees");
                 });
 
             modelBuilder.Entity("Employee_Management.Models.Employee", b =>
                 {
-                    b.Navigation("Payslip");
+                    b.Navigation("Payslips");
                 });
 #pragma warning restore 612, 618
         }

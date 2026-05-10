@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,7 +13,7 @@
     <link href="~/template/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link href="~/template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/template/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -22,41 +22,258 @@
     <link href="~/template/vendor/quill/quill.bubble.css" rel="stylesheet">
     <link href="~/template/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="~/template/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
 
     <link href="~/template/css/style.css" rel="stylesheet">
 
     <style>
-        html,
         body {
-            height: 100%;
-            margin: 0;
+            font-family: 'Inter', "Open Sans", sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar {
+            background: #ffffff;
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-nav .nav-link {
+            font-weight: 500;
+            border-radius: 8px;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav .nav-link:not(.collapsed) {
+            background: linear-gradient(90deg, #4154f1 0%, #717ff5 100%);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(65, 84, 241, 0.25);
+        }
+
+        .sidebar-nav .nav-link:not(.collapsed) i {
+            color: #fff;
+        }
+
+        .sidebar-nav .nav-link.collapsed:hover {
+            background-color: #f6f9ff;
+            color: #4154f1;
+        }
+
+        .main {
+            min-height: calc(100vh - 120px);
+        }
+
+        .footer {
+            background: transparent;
+            border: none;
+            padding: 30px 0;
+            font-size: 14px;
+            color: #899bbd;
+        }
+        
+        /* Premium Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a1a1a1;
+        }
+        /* Datatables Premium Styling */
+        .datatable-input {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #dce1e7;
+            font-size: 14px;
+            transition: all 0.2s;
+            box-shadow: none;
+        }
+
+        .datatable-input:focus {
+            border-color: #4154f1;
+            box-shadow: 0 0 0 0.25rem rgba(65, 84, 241, 0.1);
+            outline: none;
+        }
+
+        .datatable-selector {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #dce1e7;
+        }
+
+        .datatable-pagination a {
+            border-radius: 6px !important;
+            margin: 0 2px;
+            border: none !important;
+            background: #f6f9ff !important;
+            color: #4154f1 !important;
+        }
+
+        .datatable-pagination .active a {
+            background: #4154f1 !important;
+            color: #fff !important;
+        }
+
+        /* Dark Mode Variables */
+        :root {
+            --bg-color: #f0f2f5;
+            --card-bg: #ffffff;
+            --text-color: #444444;
+            --heading-color: #012970;
+            --border-color: rgba(0, 0, 0, 0.05);
+            --header-bg: rgba(255, 255, 255, 0.8);
+            --sidebar-bg: #ffffff;
+        }
+
+        [data-bs-theme="dark"] {
+            --bg-color: #0b0f19;
+            --card-bg: #151c2c;
+            --text-color: #a9b1d1;
+            --heading-color: #e0e6ed;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --header-bg: rgba(21, 28, 44, 0.85);
+            --sidebar-bg: #151c2c;
+        }
+
+        body {
+            font-family: 'Inter', "Open Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-color: var(--border-color);
+            color: var(--text-color);
+        }
+
+        .card-title { color: var(--heading-color); }
+
+        .header {
+            background: var(--header-bg) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar {
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+        }
+
+        .pagetitle h1 { color: var(--heading-color); }
+        .logo span { color: var(--heading-color); }
+        .breadcrumb-item.active { color: var(--text-color); opacity: 0.8; }
+        .breadcrumb-item + .breadcrumb-item::before { color: var(--text-color); opacity: 0.5; }
+
+        .table {
+            color: var(--text-color);
+            border-color: var(--border-color);
+        }
+
+        .bg-light {
+            background-color: var(--bg-color) !important;
+            color: var(--heading-color);
+        }
+
+        .theme-toggle-btn {
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--text-color);
         }
 
-        main {
-            flex: 1; /* Key for pushing footer to bottom */
+        .theme-toggle-btn:hover {
+            background: rgba(65, 84, 241, 0.1);
+            color: #4154f1;
         }
 
-        footer {
-            /* Your footer styles here */
-            background-color: #f8f9fa; /* Example background color */
-            padding: 20px; /* Example padding */
-            text-align: center; /* Example text alignment */
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            overflow: hidden;
+            background: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(65, 84, 241, 0.1);
+            border-top: 5px solid #4154f1;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @@keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .preloader-hidden {
+            opacity: 0;
+            visibility: hidden;
         }
     </style>
 
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
 
     <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="~/template/img/logo.png" alt="">
-                <span class="d-none d-lg-block">Payrol Management</span>
+            <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
+                <div class="logo-icon me-2">
+                    <i class="bi bi-wallet2 text-primary fs-3"></i>
+                </div>
+                <span class="d-none d-lg-block">PayRoll <span class="text-primary">Pro</span></span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search employees, records..." title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+
+        <div class="ms-3">
+            <button id="theme-toggle" class="theme-toggle-btn shadow-sm" title="Toggle Dark/Light Mode">
+                <i class="bi bi-moon-stars"></i>
+            </button>
         </div>
 
         <nav class="header-nav ms-auto">
@@ -120,14 +337,25 @@
         </nav>
     </header>
 
-    <aside id="sidebar" class="sidebar">
+    <aside id="sidebar" class="sidebar shadow-sm">
         <ul class="sidebar-nav" id="sidebar-nav">
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-controller="Home" asp-action="Index">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-heading">Management</li>
+
             <li class="nav-item">
                 <a class="nav-link" asp-area="" asp-controller="Employees" asp-action="Index">
                     <i class="bi bi-people"></i>
                     <span>Manage Employees</span>
                 </a>
             </li>
+            
             <li class="nav-item">
                 <a class="nav-link" asp-area="" asp-controller="Departments" asp-action="Index">
                     <i class="bi bi-building"></i>
@@ -137,24 +365,29 @@
 
             <li class="nav-item">
                 <a class="nav-link" asp-area="" asp-controller="Designations" asp-action="Index">
-                    <i class="bi bi-file-earmark-text"></i>
+                    <i class="bi bi-person-badge"></i>
                     <span>Manage Designation</span>
                 </a>
             </li>
+
+            <li class="nav-heading">Finance</li>
+
             <li class="nav-item">
                 <a class="nav-link" asp-area="" asp-controller="BankDetails" asp-action="Index">
-                    <i class="bi bi-credit-card"></i>
-                    <span>Manage Bank Details</span>
+                    <i class="bi bi-credit-card-2-front"></i>
+                    <span>Bank Details</span>
                 </a>
             </li>
+            
             <li class="nav-item">
                 <a class="nav-link" asp-area="" asp-controller="Payslips" asp-action="Index">
-                    <i class="bi bi-file-earmark-text"></i>
-                    <span>Manage Payslips</span>
+                    <i class="bi bi-file-earmark-spreadsheet"></i>
+                    <span>Generate Payslips</span>
                 </a>
             </li>
         </ul>
     </aside>
+
 
     <main id="main" class="main">
         <div class="container">
@@ -170,9 +403,9 @@
         </div>
     </footer>
 
-    <script src="~/template/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/template/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/template/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 
@@ -183,20 +416,123 @@
     <script src="~/template/vendor/simple-datatables/simple-datatables.js"></script>
     <script src="~/template/vendor/tinymce/tinymce.min.js"></script>
     <script src="~/template/vendor/php-email-form/validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="~/template/js/main.js"></script>
 
     <script>
-        // Active navigation highlighting (Adjust as needed)
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('preloader-hidden');
+            }, 300);
+        });
+
+        // Show preloader on link click
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (link && 
+                link.href && 
+                !link.href.startsWith('#') && 
+                !link.href.includes('javascript:') && 
+                !link.target && 
+                link.getAttribute('asp-action') !== 'Delete' && // Don't block delete actions
+                !link.classList.contains('dropdown-toggle')) {
+                
+                const currentHost = window.location.host;
+                const linkHost = new URL(link.href).host;
+
+                if (currentHost === linkHost) {
+                    document.getElementById('preloader').classList.remove('preloader-hidden');
+                }
+            }
+        });
+
+        // Show preloader on form submission
+        document.addEventListener('submit', (e) => {
+            const form = e.target;
+            if (form && !form.getAttribute('target')) {
+                document.getElementById('preloader').classList.remove('preloader-hidden');
+            }
+        });
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.documentElement;
+        const themeIcon = themeToggle.querySelector('i');
+
+        const updateThemeIcon = (isDark) => {
+            themeIcon.className = isDark ? 'bi bi-sun' : 'bi bi-moon-stars';
+        };
+
+        // Check for saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-bs-theme', savedTheme);
+        updateThemeIcon(savedTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = body.getAttribute('data-bs-theme') === 'dark';
+            const newTheme = isDark ? 'light' : 'dark';
+            
+            body.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(!isDark);
+        });
+
+        // Global Search Functionality
+        document.addEventListener("DOMContentLoaded", () => {
+            const headerSearchForm = document.querySelector('.search-form');
+            if (headerSearchForm) {
+                const searchInput = headerSearchForm.querySelector('input[name="query"]');
+                
+                headerSearchForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const query = searchInput.value;
+                    
+                    if (window.allDataTables && window.allDataTables.length > 0) {
+                        window.allDataTables.forEach(dt => dt.search(query));
+                    }
+                });
+
+                // Real-time search
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value;
+                    if (window.allDataTables && window.allDataTables.length > 0) {
+                        window.allDataTables.forEach(dt => dt.search(query));
+                    }
+                });
+            }
+        });
+
+        // Active navigation highlighting
         const currentUrl = window.location.pathname;
         const navLinks = document.querySelectorAll('#sidebar-nav .nav-link');
 
         navLinks.forEach(link => {
             const linkPath = new URL(link.href).pathname;
             if (linkPath === currentUrl || currentUrl.startsWith(linkPath + "/")) {
-                link.classList.add('active');
+                link.classList.remove('collapsed');
             }
         });
+
+        // Global Delete Confirmation
+        function confirmDelete(url) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#4154f1',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = url;
+                }
+            });
+        }
     </script>
 
 </body>

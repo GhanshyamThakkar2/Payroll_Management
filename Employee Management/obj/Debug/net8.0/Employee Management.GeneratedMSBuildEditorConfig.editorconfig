@@ -15,147 +15,149 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
 build_property.RootNamespace = Employee_Management
 build_property.RootNamespace = Employee_Management
-build_property.ProjectDir = D:\Payrol\Payroll_Management\Employee Management\
+build_property.ProjectDir = C:\Personal Project\Payroll_Management\Employee Management\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Payrol\Payroll_Management\Employee Management
+build_property.MSBuildProjectDirectory = C:\Personal Project\Payroll_Management\Employee Management
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Create.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/BankDetails/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Delete.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/BankDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Details.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/BankDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Edit.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/BankDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/BankDetails/Index.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/BankDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0RldGFpbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Departments/Create.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Departments/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Departments/Delete.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Departments/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Departments/Details.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Departments/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Departments/Edit.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Departments/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Departments/Index.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Departments/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Designations/Create.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Designations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Designations/Delete.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Designations/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Designations/Details.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Designations/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Designations/Edit.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Designations/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Designations/Index.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Designations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Employees/Create.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Employees/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Employees/Delete.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Employees/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Employees/Details.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Employees/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Employees/Edit.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Employees/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Employees/Index.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Employees/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Home/Index.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Home/Privacy.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Create.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Payslips/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Delete.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Payslips/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Details.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Payslips/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Edit.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Payslips/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Payslips/Index.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Payslips/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5c2xpcHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Shared/Error.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Shared/head_foot.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Shared/head_foot.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXGhlYWRfZm9vdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Shared/_Layout.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/_ViewImports.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Payrol/Payroll_Management/Employee Management/Views/_ViewStart.cshtml]
+[C:/Personal Project/Payroll_Management/Employee Management/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

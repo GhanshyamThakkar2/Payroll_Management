@@ -1,59 +1,77 @@
-﻿@model IEnumerable<Employee_Management.Models.BankDetail>
+@model IEnumerable<Employee_Management.Models.BankDetail>
 
 @{
     ViewData["Title"] = "Bank Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Bank Details</h1>
+<div class="pagetitle">
+    <h1>Bank Management</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item active">Bank Details</li>
+        </ol>
+    </nav>
+</div>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
-</p>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body pt-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="card-title p-0 m-0">Employee Bank Records</h5>
+                        <a asp-action="Create" class="btn btn-primary rounded-pill">
+                            <i class="bi bi-plus-circle me-1"></i> New Entry
+                        </a>
+                    </div>
 
-<table class="table datatable">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.AccountHolderName)</th>
-            <th>@Html.DisplayNameFor(model => model.AccountNumber)</th>
-            <th>@Html.DisplayNameFor(model => model.IFSCCode)</th>
-            <th>@Html.DisplayNameFor(model => model.BankName)</th>
-            <th>@Html.DisplayNameFor(model => model.Branch)</th>
-            <th>Employee Name</th> <!-- 🛠 Changed from EmployeeId to Employee Name -->
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.AccountHolderName)</td>
-                <td>@Html.DisplayFor(modelItem => item.AccountNumber)</td>
-                <td>@Html.DisplayFor(modelItem => item.IFSCCode)</td>
-                <td>@Html.DisplayFor(modelItem => item.BankName)</td>
-                <td>@Html.DisplayFor(modelItem => item.Branch)</td>
-                <td>@item.Employee?.Name</td> <!-- 🛠 Corrected to show Employee Name safely -->
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.BankDetailId" >Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.BankDetailId" >Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.BankDetailId" >Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                    <div class="table-responsive">
+                        <table class="table table-hover datatable align-middle">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th class="py-3">Account Holder</th>
+                                    <th class="py-3">Bank Details</th>
+                                    <th class="py-3">Employee</th>
+                                    <th class="py-3 text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="fw-bold text-dark">@item.AccountHolderName</div>
+                                            <small class="text-muted">A/C: @item.AccountNumber</small>
+                                        </td>
+                                        <td>
+                                            <div><i class="bi bi-bank me-1 text-primary"></i> @item.BankName</div>
+                                            <small class="text-muted">IFSC: @item.IFSCCode | @item.Branch</small>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-primary-light text-primary">
+                                                <i class="bi bi-person me-1"></i> @item.Employee?.Name
+                                            </span>
+                                        </td>
+                                        <td class="text-end">
+                                            <div class="btn-group">
+                                                <a asp-action="Edit" asp-route-id="@item.BankDetailId" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a>
+                                                <a asp-action="Details" asp-route-id="@item.BankDetailId" class="btn btn-sm btn-outline-info"><i class="bi bi-info-circle"></i></a>
+                                                <a href="javascript:void(0)" onclick="confirmDelete('@Url.Action("Delete", new { id = item.BankDetailId })')" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- Initialize DataTables -->
-@section Scripts {
-    <script>
-        $(document).ready(function () {
-            $('.datatable').DataTable({
-                paging: true,
-                searching: true,
-                ordering: true,
-                info: true,
-                pageLength: 10,
-            });
-        });
-    </script>
-}
+<style>
+    .bg-primary-light { background-color: #cfe2ff; }
+</style>

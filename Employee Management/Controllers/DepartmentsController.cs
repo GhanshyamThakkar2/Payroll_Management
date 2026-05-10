@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -118,19 +118,23 @@ namespace Employee_Management.Controllers
         // GET: Departments/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var department = await _context.Departments
+                .Include(d => d.Employees)
                 .FirstOrDefaultAsync(m => m.DepartmentId == id);
-            if (department == null)
+            
+            if (department == null) return NotFound();
+
+            if (department.Employees != null && department.Employees.Any())
             {
-                return NotFound();
+                TempData["Error"] = "Cannot delete a department with existing employees.";
+                return RedirectToAction(nameof(Index));
             }
 
-            return View(department);
+            _context.Departments.Remove(department);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Departments/Delete/5

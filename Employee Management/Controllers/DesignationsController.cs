@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -124,20 +124,14 @@ namespace Employee_Management.Controllers
         // GET: Designations/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var designation = await _context.Designations
-                .Include(d => d.Department)
-                .FirstOrDefaultAsync(m => m.DesignationId == id);
-            if (designation == null)
-            {
-                return NotFound();
-            }
+            var designation = await _context.Designations.FindAsync(id);
+            if (designation == null) return NotFound();
 
-            return View(designation);
+            _context.Designations.Remove(designation);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Designations/Delete/5

@@ -1,118 +1,159 @@
-﻿@model IEnumerable<Employee_Management.Models.Employee>
+@model IEnumerable<Employee_Management.Models.Employee>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Employee Directory";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="pagetitle">
+    <h1>Employee Management</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item active">Employees</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table datatable">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FatherName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Department)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Designation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BasicSalary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Allowance)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Deduction)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LocalAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PermanentAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FatherName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateOfBirth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Department.DepartmentName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Designation.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BasicSalary)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Allowance)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Deduction)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LocalAddress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PermanentAddress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                
-                
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> 
-                    @* <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a> *@
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<section class="section dashboard">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card info-card sales-card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Employee Directory <span>| All Records</span></h5>
+                        <a asp-action="Create" class="btn btn-primary btn-sm rounded-pill shadow-sm">
+                            <i class="bi bi-plus-lg me-1"></i> Add New Employee
+                        </a>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover datatable border-0">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th class="border-0">Employee</th>
+                                    <th class="border-0">Department</th>
+                                    <th class="border-0">Designation</th>
+                                    <th class="border-0">Contact Info</th>
+                                    <th class="border-0 text-center">Salary</th>
+                                    <th class="border-0 text-center">Status</th>
+                                    <th class="border-0 text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-circle me-3">
+                                                    @(item.Name.Substring(0, 1).ToUpper())
+                                                </div>
+                                                <div>
+                                                    <div class="fw-bold text-dark">@item.Name</div>
+                                                    <small class="text-muted">S/O @item.FatherName</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-info-light text-info">
+                                                <i class="bi bi-building me-1"></i> @item.Department?.DepartmentName
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="text-secondary small fw-bold">@item.Designation?.Title</span>
+                                        </td>
+                                        <td>
+                                            <div class="small"><i class="bi bi-envelope-at me-1"></i> @item.Email</div>
+                                            <div class="small text-muted"><i class="bi bi-phone me-1"></i> @item.Phone</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="fw-bold text-success">@item.BasicSalary.ToString("C0")</span>
+                                        </td>
+                                        <td class="text-center">
+                                            @if (item.Status)
+                                            {
+                                                <span class="badge rounded-pill bg-success">Active</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge rounded-pill bg-danger">Inactive</span>
+                                            }
+                                        </td>
+                                        <td class="text-end">
+                                            <div class="btn-group shadow-sm rounded">
+                                                <a asp-action="Edit" asp-route-id="@item.EmployeeId" class="btn btn-outline-primary btn-sm" title="Edit">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                                <a asp-action="Details" asp-route-id="@item.EmployeeId" class="btn btn-outline-info btn-sm" title="Details">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <a href="javascript:void(0)" onclick="confirmDelete('@Url.Action("Delete", new { id = item.EmployeeId })')" class="btn btn-outline-danger btn-sm" title="Delete">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .avatar-circle {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #4154f1 0%, #717ff5 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        box-shadow: 0 2px 10px rgba(65, 84, 241, 0.2);
+    }
+
+    .bg-info-light {
+        background-color: #e0f3ff;
+    }
+
+    .datatable thead th {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        color: #899bbd;
+        padding: 15px 10px;
+    }
+
+    .datatable tbody td {
+        vertical-align: middle;
+        padding: 15px 10px;
+        border-bottom: 1px solid #f6f9ff;
+    }
+
+    .btn-group .btn {
+        padding: 0.25rem 0.6rem;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f6f9ff;
+        transition: all 0.2s;
+    }
+
+    .card {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0;
+    }
+</style>

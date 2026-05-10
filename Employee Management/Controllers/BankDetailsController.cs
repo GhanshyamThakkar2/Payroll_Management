@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -128,20 +128,14 @@ namespace Employee_Management.Controllers
         // GET: BankDetails/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var bankDetail = await _context.BankDetails
-                .Include(b => b.Employee)
-                .FirstOrDefaultAsync(m => m.BankDetailId == id);
-            if (bankDetail == null)
-            {
-                return NotFound();
-            }
+            var bankDetail = await _context.BankDetails.FindAsync(id);
+            if (bankDetail == null) return NotFound();
 
-            return View(bankDetail);
+            _context.BankDetails.Remove(bankDetail);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: BankDetails/Delete/5

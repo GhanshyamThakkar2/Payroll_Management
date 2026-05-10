@@ -17,7 +17,7 @@ namespace Employee_Management.Migrations
                 {
                     DepartmentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DepartmentName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    DepartmentName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,7 +30,7 @@ namespace Employee_Management.Migrations
                 {
                     DesignationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     DepartmentId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -50,15 +50,14 @@ namespace Employee_Management.Migrations
                 {
                     EmployeeId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FatherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FatherName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LocalAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PermanentAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LocalAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PermanentAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DepartmentId = table.Column<int>(type: "int", nullable: false),
                     DesignationId = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
@@ -89,11 +88,11 @@ namespace Employee_Management.Migrations
                 {
                     BankDetailId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AccountHolderName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AccountNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IFSCCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BankName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Branch = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AccountHolderName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    AccountNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IFSCCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BankName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Branch = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     EmployeeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -115,14 +114,14 @@ namespace Employee_Management.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
-                    Month = table.Column<string>(type: "int", nullable: true),
+                    Month = table.Column<int>(type: "int", nullable: false),
                     PayslipDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BasicSalary = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TotalAllowances = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TotalDeductions = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     NetSalary = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Comments = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Status = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Comments = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
                 {

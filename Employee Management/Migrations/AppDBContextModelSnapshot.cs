@@ -31,21 +31,29 @@ namespace Employee_Management.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BankDetailId"));
 
                     b.Property<string>("AccountHolderName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("AccountNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BankName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Branch")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
                     b.Property<string>("IFSCCode")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BankDetailId");
@@ -65,7 +73,9 @@ namespace Employee_Management.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"));
 
                     b.Property<string>("DepartmentName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("DepartmentId");
 
@@ -84,7 +94,9 @@ namespace Employee_Management.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("DesignationId");
 
@@ -120,27 +132,31 @@ namespace Employee_Management.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FatherName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LocalAddress")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PermanentAddress")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Photo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
@@ -167,12 +183,13 @@ namespace Employee_Management.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Comments")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Month")
+                    b.Property<int>("Month")
                         .HasColumnType("int");
 
                     b.Property<decimal>("NetSalary")
@@ -182,7 +199,9 @@ namespace Employee_Management.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<decimal>("TotalAllowances")
                         .HasColumnType("decimal(18,2)");

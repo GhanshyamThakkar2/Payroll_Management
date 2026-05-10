@@ -1,144 +1,183 @@
-﻿@model Employee_Management.Models.Employee
+@model Employee_Management.Models.Employee
 
 @{
     ViewData["Title"] = "Create Employee";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create Employee</h1>
-<hr />
+<div class="pagetitle">
+    <h1>New Employee</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Employees" asp-action="Index">Employees</a></li>
+            <li class="breadcrumb-item active">Create</li>
+        </ol>
+    </nav>
+</div>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Create Employee</h5>
-                <form asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title p-0 mt-3 mb-4">Personal & Professional Details</h5>
 
-                    <!-- Employee Information -->
-                    <div class="row mb-3">
-                        <label asp-for="Name" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="Name" class="form-control" placeholder="Enter Your Name" required />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                    <form asp-action="Create" class="row g-3 needs-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <i class="bi bi-exclamation-octagon me-1"></i> Please fix the errors below.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label asp-for="FatherName" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="FatherName" class="form-control" placeholder="Enter Your Father Name" required />
-                            <span asp-validation-for="FatherName" class="text-danger"></span>
+                        <!-- Full Name -->
+                        <div class="col-md-6">
+                            <label asp-for="Name" class="form-label fw-bold">Full Name</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input asp-for="Name" class="form-control" placeholder="John Doe" required />
+                                <div class="invalid-feedback">Please enter the employee name.</div>
+                            </div>
+                            <span asp-validation-for="Name" class="text-danger small"></span>
                         </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Date of Birth</label>
-                        <div class="col-sm-10">
+                        <!-- Father's Name -->
+                        <div class="col-md-6">
+                            <label asp-for="FatherName" class="form-label fw-bold">Father's Name</label>
+                            <input asp-for="FatherName" class="form-control" placeholder="Father's Full Name" required />
+                            <span asp-validation-for="FatherName" class="text-danger small"></span>
+                        </div>
+
+                        <!-- DOB -->
+                        <div class="col-md-4">
+                            <label asp-for="DateOfBirth" class="form-label fw-bold">Date of Birth</label>
                             <input type="date" asp-for="DateOfBirth" class="form-control" required />
+                            <span asp-validation-for="DateOfBirth" class="text-danger small"></span>
                         </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label asp-for="Gender" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <select asp-for="Gender" class="form-control">
+                        <!-- Gender -->
+                        <div class="col-md-4">
+                            <label asp-for="Gender" class="form-label fw-bold">Gender</label>
+                            <select asp-for="Gender" class="form-select" required>
+                                <option value="" selected disabled>Choose...</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
+                                <option value="Other">Other</option>
                             </select>
-                            <span asp-validation-for="Gender" class="text-danger"></span>
+                            <span asp-validation-for="Gender" class="text-danger small"></span>
                         </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label asp-for="Phone" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="Phone" class="form-control" placeholder="Enter Your Phone Number" required />
-                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        <!-- Phone -->
+                        <div class="col-md-4">
+                            <label asp-for="Phone" class="form-label fw-bold">Phone Number</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                                <input asp-for="Phone" class="form-control" placeholder="10-digit number" required />
+                            </div>
+                            <span asp-validation-for="Phone" class="text-danger small"></span>
                         </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label asp-for="Email" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="Email" class="form-control" placeholder="Enter Your Email ID" required />
-                            <span asp-validation-for="Email" class="text-danger"></span>
+                        <!-- Email -->
+                        <div class="col-md-6">
+                            <label asp-for="Email" class="form-label fw-bold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input asp-for="Email" class="form-control" placeholder="name@company.com" required />
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger small"></span>
                         </div>
-                    </div>
 
-                    <!-- Department & Designation -->
-                    <div class="row mb-3">
-                        <label asp-for="DepartmentId" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId">
-                                <option value="">-- Select Department --</option>
+                        <!-- Status -->
+                        <div class="col-md-6">
+                            <label asp-for="Status" class="form-label fw-bold">Employment Status</label>
+                            <div class="d-flex align-items-center mt-2">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" asp-for="Status" id="statusSwitch" checked>
+                                    <label class="form-check-label ms-2" for="statusSwitch">Active Employee</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+                        <h5 class="card-title p-0 m-0 mb-3">Work & Financials</h5>
+
+                        <!-- Department -->
+                        <div class="col-md-6">
+                            <label asp-for="DepartmentId" class="form-label fw-bold">Department</label>
+                            <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.DepartmentId" required>
+                                <option value="" selected disabled>-- Select Department --</option>
                             </select>
+                            <span asp-validation-for="DepartmentId" class="text-danger small"></span>
                         </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label asp-for="DesignationId" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <select asp-for="DesignationId" class="form-control">
-                                <option value="">-- Select Designation --</option>
+                        <!-- Designation -->
+                        <div class="col-md-6">
+                            <label asp-for="DesignationId" class="form-label fw-bold">Designation</label>
+                            <select asp-for="DesignationId" class="form-select" required>
+                                <option value="" selected disabled>-- Select Designation --</option>
                             </select>
+                            <span asp-validation-for="DesignationId" class="text-danger small"></span>
                         </div>
-                    </div>
 
-                    <!-- Salary & Allowances -->
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Basic Salary</label>
-                        <div class="col-sm-10">
-                            <input type="number" asp-for="BasicSalary" class="form-control" placeholder="Enter Your Basic Salary" required />
+                        <!-- Salary -->
+                        <div class="col-md-4">
+                            <label asp-for="BasicSalary" class="form-label fw-bold">Basic Salary</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" asp-for="BasicSalary" class="form-control" placeholder="0.00" required />
+                            </div>
+                            <span asp-validation-for="BasicSalary" class="text-danger small"></span>
                         </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label asp-for="Allowance" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="Allowance" class="form-control" placeholder="Enter Your Allowance" />
-                            <span asp-validation-for="Allowance" class="text-danger"></span>
+                        <!-- Allowance -->
+                        <div class="col-md-4">
+                            <label asp-for="Allowance" class="form-label fw-bold">Allowance</label>
+                            <input asp-for="Allowance" class="form-control" placeholder="0.00" />
                         </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label asp-for="Deduction" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="Deduction" class="form-control" placeholder="Enter Your Deduction" />
-                            <span asp-validation-for="Deduction" class="text-danger"></span>
+                        <!-- Deduction -->
+                        <div class="col-md-4">
+                            <label asp-for="Deduction" class="form-label fw-bold">Deduction</label>
+                            <input asp-for="Deduction" class="form-control" placeholder="0.00" />
                         </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Local Address</label>
-                        <div class="col-sm-10">
-                            <textarea asp-for="LocalAddress" class="form-control" placeholder="Enter Your Local Address" required></textarea>
+                        <hr class="my-4">
+                        <h5 class="card-title p-0 m-0 mb-3">Address Information</h5>
+
+                        <!-- Local Address -->
+                        <div class="col-md-6">
+                            <label asp-for="LocalAddress" class="form-label fw-bold">Local Address</label>
+                            <textarea asp-for="LocalAddress" class="form-control" rows="3" placeholder="Current residential address" required></textarea>
+                            <span asp-validation-for="LocalAddress" class="text-danger small"></span>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Permanent Address</label>
-                        <div class="col-sm-10">
-                            <textarea asp-for="PermanentAddress" class="form-control" placeholder="Enter Your Permanent Address" required></textarea>
+
+                        <!-- Permanent Address -->
+                        <div class="col-md-6">
+                            <label asp-for="PermanentAddress" class="form-label fw-bold">Permanent Address</label>
+                            <textarea asp-for="PermanentAddress" class="form-control" rows="3" placeholder="Home town address" required></textarea>
+                            <span asp-validation-for="PermanentAddress" class="text-danger small"></span>
                         </div>
-                    </div>
-                    <!-- Buttons -->
-                    <div class="text-center">
-                        <input type="submit" value="Create" class="btn btn-primary" />
-                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-                    </div>
-                </form>
+
+                        <div class="col-12 text-center mt-5 mb-3">
+                            <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill shadow-sm">
+                                <i class="bi bi-check-circle me-1"></i> Create Employee
+                            </button>
+                            <a asp-action="Index" class="btn btn-light px-5 py-2 rounded-pill ms-2 border">
+                                <i class="bi bi-x-circle me-1"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
             // Load Designations based on selected Department
@@ -146,7 +185,7 @@
                 var departmentId = $(this).val();
                 var designationDropdown = $('#DesignationId');
 
-                designationDropdown.empty().append('<option value="">-- Select Designation --</option>');
+                designationDropdown.empty().append('<option value="" selected disabled>-- Select Designation --</option>');
 
                 if (departmentId) {
                     $.ajax({
@@ -157,6 +196,9 @@
                             $.each(data, function (index, item) {
                                 designationDropdown.append($('<option></option>').val(item.designationId).text(item.title));
                             });
+                        },
+                        error: function() {
+                            console.error("Failed to load designations");
                         }
                     });
                 }
@@ -164,3 +206,4 @@
         });
     </script>
 }
+

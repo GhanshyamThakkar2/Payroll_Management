@@ -1,3 +1,4 @@
+using System;
 using Employee_Management.Interface;
 using Employee_Management.Models;
 using Employee_Management.Repository;
@@ -14,6 +15,12 @@ builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("mycon")));
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 // Register your services
 builder.Services.AddScoped<IEmployee, EmployeeRepository>();
@@ -36,12 +43,13 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseSession();
 app.UseAuthorization();
 
 // Configure routing
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
+    pattern: "{controller=Account}/{action=Login}/{id?}"
 );
 
 app.Run();

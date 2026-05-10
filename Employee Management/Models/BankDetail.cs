@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Employee_Management.Models
 {
@@ -15,7 +15,6 @@ namespace Employee_Management.Models
         public string AccountNumber { get; set; }
 
         [Required(ErrorMessage = "IFSC Code is required.")]
-        [RegularExpression(@"^[A-Z]{4}0[A-Z0-9]{6}$", ErrorMessage = "Enter a valid IFSC Code.")]
         public string IFSCCode { get; set; }
 
         [Required(ErrorMessage = "Bank name is required.")]

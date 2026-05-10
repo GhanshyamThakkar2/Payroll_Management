@@ -48,6 +48,15 @@ namespace Employee_Management.Models
         public decimal Deduction { get; set; }
         //One to many
         public ICollection<Payslip>? Payslips { get; set; }
-        //public Login Login { get; set; }
+        
+        // Account Credentials (Used during Create/Edit but stored in User table)
+        [System.ComponentModel.DataAnnotations.Schema.NotMapped]
+        public string? Username { get; set; }
+        
+        [System.ComponentModel.DataAnnotations.Schema.NotMapped]
+        public string? Password { get; set; }
+
+        [System.ComponentModel.DataAnnotations.Schema.NotMapped]
+        public string? Role { get; set; } = "Employee";
     }
 }

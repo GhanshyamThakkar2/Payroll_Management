@@ -1,46 +1,62 @@
-﻿@model Employee_Management.Models.Department
+@model Employee_Management.Models.Department
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Department";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<div class="pagetitle">
+    <h1>Edit Department</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Departments" asp-action="Index">Departments</a></li>
+            <li class="breadcrumb-item active">Edit</li>
+        </ol>
+    </nav>
+</div>
 
-<h4>Department</h4>
-<hr />
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Edit Department</h5>
-                <form asp-action="Edit">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="DepartmentId" />
+<section class="section">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title p-0 mt-3 mb-4">Update Department Info</h5>
 
-                    <div class="row mb-3">
-                        <label asp-for="DepartmentName" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="DepartmentName" class="form-control" />
-                            <span asp-validation-for="DepartmentName" class="text-danger"></span>
+                    <form asp-action="Edit" class="row g-3 needs-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <i class="bi bi-exclamation-octagon me-1"></i> Please fix the errors below.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                    </div>
+                        <input type="hidden" asp-for="DepartmentId" />
 
-                    <div class="text-center">
-                        <input type="submit" value="Save" class="btn btn-primary" />
-                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-                    </div>
-                </form>
+                        <div class="col-12">
+                            <label asp-for="DepartmentName" class="form-label fw-bold">Department Name</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text"><i class="bi bi-building"></i></span>
+                                <input asp-for="DepartmentName" class="form-control" placeholder="e.g. Human Resources" required />
+                                <div class="invalid-feedback">Please enter the department name.</div>
+                            </div>
+                            <span asp-validation-for="DepartmentName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-12 text-center mt-5 mb-3">
+                            <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill shadow-sm">
+                                <i class="bi bi-save me-1"></i> Save Changes
+                            </button>
+                            <a asp-action="Index" class="btn btn-light px-5 py-2 rounded-pill ms-2 border">
+                                <i class="bi bi-x-circle me-1"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div>
-</div>
+</section>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
+}

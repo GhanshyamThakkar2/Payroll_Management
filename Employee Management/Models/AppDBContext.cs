@@ -1,4 +1,4 @@
-﻿using Employee_Management.Interface;
+using Employee_Management.Interface;
 using Microsoft.EntityFrameworkCore;
 
 namespace Employee_Management.Models
@@ -14,6 +14,7 @@ namespace Employee_Management.Models
         public DbSet<Designation> Designations { get; set; }
         public DbSet<Payslip> Payslips { get; set; }
         public DbSet<BankDetail> BankDetails { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

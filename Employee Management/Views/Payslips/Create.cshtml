@@ -1,50 +1,56 @@
-﻿@model Employee_Management.Models.Payslip
+@model Employee_Management.Models.Payslip
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Payslip";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create Payslip</h1>
-<hr />
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Create Payslip</h5>
-                <form asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="pagetitle">
+    <h1>Generate Payslip</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Payslips" asp-action="Index">Payslips</a></li>
+            <li class="breadcrumb-item active">Generate</li>
+        </ol>
+    </nav>
+</div>
 
-                    <!-- Employee Selection -->
-                    <div class="row mb-3">
-                        <label asp-for="EmployeeId" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <select id="EmployeeId" asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId">
-                                <option value="">-- Select Employee --</option>
-                            </select>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title p-0 mt-3 mb-4">Payroll Configuration</h5>
+
+                    <form asp-action="Create" class="row g-3 needs-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <i class="bi bi-exclamation-octagon me-1"></i> Please fix the errors below.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                    </div>
 
-                    <!-- Year -->
-                    <div class="row mb-3">
-                        <label asp-for="Year" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <select asp-for="Year" class="form-control">
-                                @foreach (var year in new int[] { DateTime.Now.Year - 1, DateTime.Now.Year, DateTime.Now.Year + 1 })
-                                {
-                                    <option value="@year">@year</option>
-                                }
-                            </select>
-                            <span asp-validation-for="Year" class="text-danger"></span>
+                        <!-- Employee Selection -->
+                        <div class="col-md-6">
+                            <label asp-for="EmployeeId" class="form-label fw-bold">Employee</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <select id="EmployeeId" asp-for="EmployeeId" class="form-select" asp-items="ViewBag.EmployeeId" required>
+                                    <option value="" selected disabled>-- Select Employee --</option>
+                                </select>
+                            </div>
+                            <span asp-validation-for="EmployeeId" class="text-danger small"></span>
                         </div>
-                    </div>
 
+                        <!-- Payslip Date -->
+                        <div class="col-md-6">
+                            <label asp-for="PayslipDate" class="form-label fw-bold">Generation Date</label>
+                            <input asp-for="PayslipDate" class="form-control" type="date" id="PayslipDate" readonly />
+                        </div>
 
-                    <!-- Month -->
-                    <div class="row mb-3">
-                        <label asp-for="Month" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <select asp-for="Month" class="form-control">
+                        <!-- Period Selection -->
+                        <div class="col-md-6">
+                            <label asp-for="Month" class="form-label fw-bold">Month</label>
+                            <select asp-for="Month" class="form-select" required>
                                 <option value="1">January</option>
                                 <option value="2">February</option>
                                 <option value="3">March</option>
@@ -58,93 +64,91 @@
                                 <option value="11">November</option>
                                 <option value="12">December</option>
                             </select>
-                            <span asp-validation-for="Month" class="text-danger"></span>
                         </div>
-                    </div>
 
-
-                    <!-- Payslip Date -->
-                    <div class="row mb-3">
-                        <label asp-for="PayslipDate" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="PayslipDate" class="form-control" type="date" id="PayslipDate" readonly />
-                            <span asp-validation-for="PayslipDate" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <!-- Basic Salary (Auto-Filled) -->
-                    <div class="row mb-3">
-                        <label asp-for="BasicSalary" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="BasicSalary" class="form-control" id="basicSalary" readonly />
-                        </div>
-                    </div>
-
-                    <!-- Total Allowances (Auto-Filled) -->
-                    <div class="row mb-3">
-                        <label asp-for="TotalAllowances" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="TotalAllowances" class="form-control" id="allowance" readonly />
-                        </div>
-                    </div>
-
-                    <!-- Total Deductions (Auto-Filled) -->
-                    <div class="row mb-3">
-                        <label asp-for="TotalDeductions" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="TotalDeductions" class="form-control" id="deduction" readonly />
-                        </div>
-                    </div>
-
-                    <!-- Net Salary (Auto-Calculated) -->
-                    <div class="row mb-3">
-                        <label asp-for="NetSalary" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="NetSalary" class="form-control" id="netSalary" readonly />
-                        </div>
-                    </div>
-
-                    <!-- Status -->
-                    
-                    <div class="row mb-3">
-                        <label asp-for="Status" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <select asp-for="Status" class="form-control">
-                                <option value="1">Paid</option>
-                                <option value="2">Unpaid</option>
+                        <div class="col-md-6">
+                            <label asp-for="Year" class="form-label fw-bold">Year</label>
+                            <select asp-for="Year" class="form-select" required>
+                                @foreach (var year in new int[] { DateTime.Now.Year - 1, DateTime.Now.Year, DateTime.Now.Year + 1 })
+                                {
+                                    <option value="@year" selected="@(year == DateTime.Now.Year)">@year</option>
+                                }
                             </select>
-                            <span asp-validation-for="Status" class="text-danger"></span>
                         </div>
-                    </div>
 
-                    <!-- Comments -->
-                    <div class="row mb-3">
-                        <label asp-for="Comments" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-10">
-                            <input asp-for="Comments" class="form-control" />
+                        <hr class="my-4">
+                        <h5 class="card-title p-0 m-0 mb-3 text-primary">Earnings & Deductions (Auto-filled)</h5>
+
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Basic Salary</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">$</span>
+                                <input asp-for="BasicSalary" class="form-control bg-light" id="basicSalary" readonly />
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Submit Button -->
-                    <div class="text-center">
-                        <input type="submit" value="Create" class="btn btn-primary" />
-                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-                    </div>
-                </form>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Total Allowances</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-success">+</span>
+                                <input asp-for="TotalAllowances" class="form-control bg-light" id="allowance" readonly />
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Total Deductions</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-danger">-</span>
+                                <input asp-for="TotalDeductions" class="form-control bg-light" id="deduction" readonly />
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mt-4">
+                            <div class="alert alert-info border-0 shadow-sm d-flex justify-content-between align-items-center mb-0">
+                                <h5 class="m-0 fw-bold"><i class="bi bi-wallet2 me-2"></i> Est. Net Salary:</h5>
+                                <h4 class="m-0 fw-bold" id="netSalaryDisplay">$0.00</h4>
+                                <input type="hidden" asp-for="NetSalary" id="netSalary" />
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+                        <h5 class="card-title p-0 m-0 mb-3">Additional Info</h5>
+
+                        <div class="col-md-6">
+                            <label asp-for="Status" class="form-label fw-bold">Payment Status</label>
+                            <select asp-for="Status" class="form-select" required>
+                                <option value="Generated">Generated</option>
+                                <option value="Paid">Paid</option>
+                                <option value="Unpaid">Unpaid</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label asp-for="Comments" class="form-label fw-bold">Internal Comments</label>
+                            <input asp-for="Comments" class="form-control" placeholder="Optional notes" />
+                        </div>
+
+                        <div class="col-12 text-center mt-5 mb-3">
+                            <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill shadow-sm">
+                                <i class="bi bi-file-earmark-check me-1"></i> Generate & Save
+                            </button>
+                            <a asp-action="Index" class="btn btn-light px-5 py-2 rounded-pill ms-2 border">
+                                <i class="bi bi-x-circle me-1"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-
         $(document).ready(function () {
-            // Set the current date in YYYY-MM-DD format
+            // Set current date
             var today = new Date().toISOString().split('T')[0];
             $("#PayslipDate").val(today);
 
@@ -153,37 +157,31 @@
 
                 if (employeeId) {
                     $.ajax({
-                        url: '/Payslips/GetEmployeeSalaryDetails', // API endpoint in controller
+                        url: '/Payslips/GetEmployeeSalaryDetails',
                         type: 'GET',
                         data: { employeeId: employeeId },
-                                success: function (data) {
-            console.log("AJAX Response:", data); // Debugging response
-            if (data) {
-                $("#basicSalary").val(data.basicSalary);
-                $("#allowance").val(data.totalAllowances);
-                $("#deduction").val(data.totalDeductions);
-                CalculateNetSalary();
-            } else {
-                console.log("No data returned from the server!");
-            }
-        },
-        error: function (xhr, status, error) {
-            console.log("AJAX Error:", xhr.responseText);
-        }
+                        success: function (data) {
+                            if (data) {
+                                $("#basicSalary").val(data.basicSalary);
+                                $("#allowance").val(data.totalAllowances);
+                                $("#deduction").val(data.totalDeductions);
+                                CalculateNetSalary();
+                            }
+                        }
                     });
                 }
             });
 
-                    function CalculateNetSalary() {
-            var basicSalary = parseFloat($("#basicSalary").val()) || 0;
-            var allowances = parseFloat($("#allowance").val()) || 0;
-            var deductions = parseFloat($("#deduction").val()) || 0;
-            var netSalary = (basicSalary + allowances - deductions).toFixed(2);
-            $("#netSalary").val(netSalary);
-        }
-
+            function CalculateNetSalary() {
+                var basicSalary = parseFloat($("#basicSalary").val()) || 0;
+                var allowances = parseFloat($("#allowance").val()) || 0;
+                var deductions = parseFloat($("#deduction").val()) || 0;
+                var netSalary = (basicSalary + allowances - deductions).toFixed(2);
+                
+                $("#netSalary").val(netSalary);
+                $("#netSalaryDisplay").text("$" + netSalary);
+            }
         });
     </script>
-
-
 }
+

@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Http
 <!DOCTYPE html>
 <html lang="en">
 
@@ -208,49 +209,11 @@
             color: #4154f1;
         }
 
-        /* Preloader Styles */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 9999;
-            overflow: hidden;
-            background: var(--bg-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-        }
-
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(65, 84, 241, 0.1);
-            border-top: 5px solid #4154f1;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @@keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .preloader-hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
     </style>
 
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
 
     <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="d-flex align-items-center justify-content-between">
@@ -281,21 +244,21 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="~/template/img/My Photo.jpeg" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">Jobanputra Ghanshyam</span>
+                        <i class="bi bi-person-circle fs-4"></i>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">@Context.Session.GetString("EmployeeName")</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
-                            <span>Web Designer</span>
+                            <h6>@Context.Session.GetString("EmployeeName")</h6>
+                            <span>@Context.Session.GetString("UserRole")</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <a class="dropdown-item d-flex align-items-center" href="#">
                                 <i class="bi bi-person"></i>
                                 <span>My Profile</span>
                             </a>
@@ -305,27 +268,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                                <i class="bi bi-gear"></i>
-                                <span>Account Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                                <i class="bi bi-question-circle"></i>
-                                <span>Need Help?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                            <a class="dropdown-item d-flex align-items-center" asp-controller="Account" asp-action="Logout">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
@@ -339,50 +282,72 @@
 
     <aside id="sidebar" class="sidebar shadow-sm">
         <ul class="sidebar-nav" id="sidebar-nav">
-            
             <li class="nav-item">
-                <a class="nav-link collapsed" asp-controller="Home" asp-action="Index">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
-            </li><!-- End Dashboard Nav -->
-
-            <li class="nav-heading">Management</li>
-
-            <li class="nav-item">
-                <a class="nav-link" asp-area="" asp-controller="Employees" asp-action="Index">
-                    <i class="bi bi-people"></i>
-                    <span>Manage Employees</span>
-                </a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" asp-area="" asp-controller="Departments" asp-action="Index">
-                    <i class="bi bi-building"></i>
-                    <span>Manage Departments</span>
-                </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" asp-area="" asp-controller="Designations" asp-action="Index">
-                    <i class="bi bi-person-badge"></i>
-                    <span>Manage Designation</span>
-                </a>
-            </li>
+            @if (Context.Session.GetString("UserRole") == "Admin")
+            {
+                <li class="nav-heading">Management</li>
 
-            <li class="nav-heading">Finance</li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Employees" asp-action="Index">
+                        <i class="bi bi-people"></i>
+                        <span>Manage Employees</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Departments" asp-action="Index">
+                        <i class="bi bi-building"></i>
+                        <span>Manage Departments</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Designations" asp-action="Index">
+                        <i class="bi bi-person-badge"></i>
+                        <span>Manage Designation</span>
+                    </a>
+                </li>
+
+                <li class="nav-heading">Finance</li>
+
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="BankDetails" asp-action="Index">
+                        <i class="bi bi-credit-card-2-front"></i>
+                        <span>Bank Details</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Payslips" asp-action="Index">
+                        <i class="bi bi-file-earmark-spreadsheet"></i>
+                        <span>Generate Payslips</span>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-heading">Employee Portal</li>
+
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="MyPayslips">
+                        <i class="bi bi-file-earmark-pdf"></i>
+                        <span>My Payslips</span>
+                    </a>
+                </li>
+            }
+
+            <li class="nav-heading">Account</li>
 
             <li class="nav-item">
-                <a class="nav-link" asp-area="" asp-controller="BankDetails" asp-action="Index">
-                    <i class="bi bi-credit-card-2-front"></i>
-                    <span>Bank Details</span>
-                </a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" asp-area="" asp-controller="Payslips" asp-action="Index">
-                    <i class="bi bi-file-earmark-spreadsheet"></i>
-                    <span>Generate Payslips</span>
+                <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">
+                    <i class="bi bi-box-arrow-right text-danger"></i>
+                    <span>Sign Out</span>
                 </a>
             </li>
         </ul>
@@ -419,43 +384,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="~/template/js/main.js"></script>
-
     <script>
-        // Preloader Logic
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            setTimeout(() => {
-                preloader.classList.add('preloader-hidden');
-            }, 300);
-        });
 
-        // Show preloader on link click
-        document.addEventListener('click', (e) => {
-            const link = e.target.closest('a');
-            if (link && 
-                link.href && 
-                !link.href.startsWith('#') && 
-                !link.href.includes('javascript:') && 
-                !link.target && 
-                link.getAttribute('asp-action') !== 'Delete' && // Don't block delete actions
-                !link.classList.contains('dropdown-toggle')) {
-                
-                const currentHost = window.location.host;
-                const linkHost = new URL(link.href).host;
-
-                if (currentHost === linkHost) {
-                    document.getElementById('preloader').classList.remove('preloader-hidden');
-                }
-            }
-        });
-
-        // Show preloader on form submission
-        document.addEventListener('submit', (e) => {
-            const form = e.target;
-            if (form && !form.getAttribute('target')) {
-                document.getElementById('preloader').classList.remove('preloader-hidden');
-            }
-        });
 
         // Theme Toggle Logic
         const themeToggle = document.getElementById('theme-toggle');

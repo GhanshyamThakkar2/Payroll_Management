@@ -63,16 +63,41 @@ namespace Employee_Management.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Check if username already exists
+                if (!string.IsNullOrEmpty(employee.Username))
+                {
+                    bool userExists = await _context.Users.AnyAsync(u => u.Username == employee.Username);
+                    if (userExists)
+                    {
+                        ModelState.AddModelError("Username", "This username is already taken.");
+                        ViewData["DepartmentId"] = new SelectList(_context.Departments, "DepartmentId", "DepartmentName", employee.DepartmentId);
+                        ViewData["DesignationId"] = new SelectList(_context.Designations.Where(d => d.DepartmentId == employee.DepartmentId), "DesignationId", "Title", employee.DesignationId);
+                        return View(employee);
+                    }
+                }
+
                 _context.Employees.Add(employee);
                 await _context.SaveChangesAsync();
 
+                // Create User record for the new employee
+                if (!string.IsNullOrEmpty(employee.Username) && !string.IsNullOrEmpty(employee.Password))
+                {
+                    var user = new User
+                    {
+                        Username = employee.Username,
+                        Password = employee.Password, // In a real app, hash this!
+                        Role = employee.Role ?? "Employee",
+                        EmployeeId = employee.EmployeeId
+                    };
+                    _context.Users.Add(user);
+                    await _context.SaveChangesAsync();
+                }
 
                 return RedirectToAction(nameof(Index));
             }
 
             ViewData["DepartmentId"] = new SelectList(_context.Departments, "DepartmentId", "DepartmentName", employee.DepartmentId);
             ViewData["DesignationId"] = new SelectList(_context.Designations.Where(d => d.DepartmentId == employee.DepartmentId), "DesignationId", "Title", employee.DesignationId);
-
 
             return View(employee);
         }
@@ -87,6 +112,13 @@ namespace Employee_Management.Controllers
 
             if (employee == null) return NotFound();
 
+            // Load User credentials
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.EmployeeId == employee.EmployeeId);
+            if (user != null)
+            {
+                employee.Username = user.Username;
+                employee.Role = user.Role;
+            }
 
             ViewData["DepartmentId"] = new SelectList(_context.Departments, "DepartmentId", "DepartmentName", employee.DepartmentId);
             ViewData["DesignationId"] = new SelectList(_context.Designations.Where(d => d.DepartmentId == employee.DepartmentId), "DesignationId", "Title", employee.DesignationId);
@@ -105,8 +137,38 @@ namespace Employee_Management.Controllers
             {
                 try
                 {
-                    _context.Employees.Update(employee);
+                    _context.Update(employee);
                     await _context.SaveChangesAsync();
+
+                    // Update User record
+                    var user = await _context.Users.FirstOrDefaultAsync(u => u.EmployeeId == employee.EmployeeId);
+                    if (user != null)
+                    {
+                        user.Username = employee.Username ?? user.Username;
+                        user.Role = employee.Role ?? user.Role;
+                        
+                        // Only update password if a new one is provided
+                        if (!string.IsNullOrEmpty(employee.Password))
+                        {
+                            user.Password = employee.Password;
+                        }
+                        
+                        _context.Update(user);
+                        await _context.SaveChangesAsync();
+                    }
+                    else if (!string.IsNullOrEmpty(employee.Username))
+                    {
+                        // If no user exists but username is provided, create one
+                        var newUser = new User
+                        {
+                            Username = employee.Username,
+                            Password = employee.Password ?? "123456", // default password if none provided
+                            Role = employee.Role ?? "Employee",
+                            EmployeeId = employee.EmployeeId
+                        };
+                        _context.Add(newUser);
+                        await _context.SaveChangesAsync();
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {

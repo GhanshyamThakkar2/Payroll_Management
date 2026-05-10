@@ -67,7 +67,7 @@
                                         </td>
                                         <td class="text-end">
                                             <div class="btn-group">
-                                                <a href="@Url.Content("~/payslips/Payslip" + item.EmployeeId + item.Month + item.Year + ".pdf")" 
+                                                <a asp-action="DownloadPdf" asp-route-id="@item.PayslipId"
                                                    class="btn btn-sm btn-success" target="_blank" title="Download PDF">
                                                     <i class="bi bi-file-pdf"></i>
                                                 </a>

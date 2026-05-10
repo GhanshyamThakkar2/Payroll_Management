@@ -681,3 +681,5 @@ wwwroot\template\vendor\tinymce\themes\silver\theme.min.js
 wwwroot\template\vendor\tinymce\tinymce.d.ts
 wwwroot\template\vendor\tinymce\tinymce.js
 wwwroot\template\vendor\tinymce\tinymce.min.js
+wwwroot\payslips\Payslip_1_1_2026.pdf
+wwwroot\payslips\Payslip-1-1-2026.pdf

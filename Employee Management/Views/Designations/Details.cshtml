@@ -1,31 +1,74 @@
-﻿@model Employee_Management.Models.Designation
+@model Employee_Management.Models.Designation
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Designation Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<div class="pagetitle">
+    <h1>Designation Details</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Designations" asp-action="Index">Designations</a></li>
+            <li class="breadcrumb-item active">Details</li>
+        </ol>
+    </nav>
+</div>
 
-<div>
-    <h4>Designation</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Department)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Department.DepartmentName)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.DesignationId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body pt-3">
+                    <h5 class="card-title fw-bold mb-4">Job Role Specification</h5>
+
+                    <div class="row mb-3">
+                        <div class="col-lg-4 col-md-4 label fw-bold text-muted small">Job Title</div>
+                        <div class="col-lg-8 col-md-8 fw-bold text-dark fs-5">
+                            <i class="bi bi-person-badge me-2 text-primary"></i> @Model.Title
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-lg-4 col-md-4 label fw-bold text-muted small">Department</div>
+                        <div class="col-lg-8 col-md-8">
+                            <span class="badge bg-info-light text-info border px-3">@Model.Department?.DepartmentName</span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-lg-4 col-md-4 label fw-bold text-muted small">Designation ID</div>
+                        <div class="col-lg-8 col-md-8"># @Model.DesignationId</div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="d-flex gap-2">
+                        <a asp-action="Edit" asp-route-id="@Model.DesignationId" class="btn btn-primary px-4 rounded-pill">
+                            <i class="bi bi-pencil me-1"></i> Edit Role
+                        </a>
+                        <a asp-action="Index" class="btn btn-light border px-4 rounded-pill">
+                            <i class="bi bi-arrow-left me-1"></i> Back to List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body pt-3 text-center py-5">
+                    <i class="bi bi-shield-check text-success display-1"></i>
+                    <h4 class="mt-3 fw-bold">Verified Role</h4>
+                    <p class="text-muted">This designation is correctly mapped to the <strong>@Model.Department?.DepartmentName</strong> department structure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .bg-info-light { background-color: #e0f7fa; }
+</style>

@@ -176,6 +176,8 @@ wwwroot\lib\twitter-bootstrap\scss\_type.scss
 wwwroot\lib\twitter-bootstrap\scss\_utilities.scss
 wwwroot\lib\twitter-bootstrap\scss\_variables-dark.scss
 wwwroot\lib\twitter-bootstrap\scss\_variables.scss
+wwwroot\payslips\Payslip-1-1-2026.pdf
+wwwroot\payslips\Payslip_1_1_2026.pdf
 wwwroot\payslips\Payslip_2_4_2025.pdf
 wwwroot\payslips\Payslip_3_12_2024.pdf
 wwwroot\payslips\Payslip_6_1_2024.pdf
@@ -681,5 +683,3 @@ wwwroot\template\vendor\tinymce\themes\silver\theme.min.js
 wwwroot\template\vendor\tinymce\tinymce.d.ts
 wwwroot\template\vendor\tinymce\tinymce.js
 wwwroot\template\vendor\tinymce\tinymce.min.js
-wwwroot\payslips\Payslip_1_1_2026.pdf
-wwwroot\payslips\Payslip-1-1-2026.pdf
